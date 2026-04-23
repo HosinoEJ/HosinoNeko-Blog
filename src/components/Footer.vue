@@ -27,7 +27,7 @@
         </div>
         <div class="right">
             <a href="#/license">Apache2.0License</a>
-            <a href="https://notbyai.fyi/"><img src="/Not_ByAi/Developed-By-Human-Not-By-AI-Badge-white.png" /></a>
+            <a href="https://notbyai.fyi/"><img src="/Not_ByAi/_SVG/Developed-By-Human-Not-By-AI-Badge-white.svg" /></a>
         </div>
     </div>
 </template>

@@ -7,8 +7,10 @@
             HosinoNeko | website
         </a>
         <page>
+            <a href="#/">首頁</a>
             <a href="#/friends">友情鏈接</a>
             <a href="#/about">關於本站</a>
+            <a href="#/blog">文章</a>
         </page>
         <div class="rtmod">
             <button onclick="settingDivOpen()" id="settingBtn">settings</button>

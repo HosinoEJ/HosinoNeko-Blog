@@ -10,6 +10,8 @@ import Home from './routes/home.vue'
 import Friends from './routes/friends.vue'
 import NotFound from './routes/404.vue'
 import license from './routes/license.vue'
+import blogs from './routes/blogs.vue'
+import blog from './routes/blog.vue'
 
 const app = createApp(App)
 
@@ -22,6 +24,8 @@ const routes = [
   { path: '/', component: Home },
   { path: '/friends', component: Friends },
   { path: '/license', component: license },
+  { path: '/blog', component: blogs },
+  { path: '/blog/:title', component: blog },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
