@@ -2,9 +2,19 @@
     background: var(--card-bg);
     padding: 20px;
     border-radius: 16px;
-    background-color: white;
     box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
     margin: 20px;
     animation: fadeInUp 0.8s ease-out 0.4s both;
-    overflow: hidden;
+    overflow: visible;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
 }

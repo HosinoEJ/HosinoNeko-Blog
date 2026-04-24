@@ -51,7 +51,7 @@
             <p><strong>如果想將本站加到您的網站友鏈的話，請將下面資訊加入您的友鏈頁面：</strong></p>
             <ul>
                 <li><strong>名稱：</strong> Website of HosinoNeko</li>
-                <li><strong>網址：</strong> 正式網址<a href="hosinoneko.me">hosinoneko.me</a>，但是有可能會變，所以我準備了備用網址，那種死都不會改的網址：<a href="https://hosino-neko-redirect-site.vercel.app/"></a></li>
+                <li><strong>網址：</strong> 正式網址<a href="hosinoneko.me">hosinoneko.me</a></li>
                 <li><strong>描述：</strong> 一隻可愛的小藥娘的網站</li>
                 <li><strong>頭像：</strong> <a src="https://avatars.githubusercontent.com/u/177436503?v=4">https://avatars.githubusercontent.com/u/177436503?v=4</a><br>
                 <img src="https://avatars.githubusercontent.com/u/177436503?v=4" width="50px" style="border-radius: 50%;"/></li>
@@ -85,12 +85,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* 佈局樣式 */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
 
 .header {
   text-align: center;

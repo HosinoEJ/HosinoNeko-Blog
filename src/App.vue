@@ -5,12 +5,16 @@
 //頂部欄和底部欄
 import Headers from './components/Headers.vue'
 import Foot from './components/Footer.vue'
+import statusForRt from './components/statusForRt.vue'
+import Banne from './components/Banne.vue';
 </script>
 
 <template>
     <Headers />
+    <Banne />
     <main class="content">
-        <router-view />
+        <div class="left div"><router-view /></div>
+        <statusForRt />
     </main>
     <Foot />
 </template>
@@ -19,5 +23,12 @@ import Foot from './components/Footer.vue'
 .content {
     /* 自動撐開，佔滿剩餘空間，將 Footer 推到底部 */
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 80%;
+}
+.left{
+    width: 80%;
 }
 </style>

@@ -1,27 +1,27 @@
-@import './base.css';
 
-html, body {
+
+:root {
+    --bg-main: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --color-title: #2c3e50;
+    --color-text: #34495e;
+    --color-link: #3498db;
+    --color-meta: #7f8c8d;
+    --card-bg: rgba(255, 255, 255, 0.527);
+}
+
+body {
     margin: 0;
     padding: 0;
-    background-color: white;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--bg-main);
+    background-attachment: fixed; /* 滾動時背景不動，更有層次感 */
+    color: var(--color-text);
+    line-height: 1.8; /* 網誌最重要的屬性：行高 */
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
 }
 
-h1{
-    font-size: 3em;
-}
-
-.prot{
-    width: 70%;
-    margin: 0 auto;
-}
-.tag{
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.tag > a{
-    margin: 0 20px;
+h1 {
+    color: var(--color-title);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: 700;
 }

@@ -7,7 +7,7 @@
 </template>
 <style scoped>
 banner{
-    height: calc(100vh - 66px);
+    height: calc(50vh - 66px);
     display: flex;
 
     align-items: center;
