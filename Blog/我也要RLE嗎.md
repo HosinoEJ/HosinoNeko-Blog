@@ -1,5 +1,3 @@
-# 我也要RLE嗎？
-
 CIALLO！給大家看看我所有的RLE相片喵。
 
 全部相片請看[這裏](https://photos.app.goo.gl/4TeccdphSS7wvBXA9)

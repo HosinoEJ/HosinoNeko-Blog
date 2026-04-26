@@ -19,13 +19,13 @@
 </template>
 <style scoped>
 header{
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     padding: 1em 2em;
-    color: white;
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 25px 0;
 }
 header > * {
     margin: 0 1em;
@@ -38,7 +38,6 @@ header img {
 }
 header .icon {
     margin-right: auto;
-    color: white;
     text-decoration: none;
 }
 header .rtmod{
@@ -49,6 +48,5 @@ header > :not(.icon,.rtmod){
 }
 header page a{
     margin: 0 20px;
-    color: white;
 }
 </style>

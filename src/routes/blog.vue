@@ -1,13 +1,14 @@
 <template>
     <div class="blog-layout" @click="handleAnchorClick">
         <aside class="toc-sidebar div" v-if="tocHtml">
-        <div class="toc-title"><h3>目錄</h3></div>
-        <div v-html="tocHtml"></div>
+            <a href="/#/blog">←查看其它文章</a>
+            <div class="toc-title"><h3>目錄</h3></div>
+            <div v-html="tocHtml"></div>
         </aside>
 
         <main>
         <h1>{{ route.params.title }}</h1>
-        <div class="blog-meta">這是meda</div>
+        <div class="blog-meta"></div>
         <div class="markdown-body" v-html="html"></div>
         </main>
     </div>
@@ -20,6 +21,7 @@ import MarkdownIt from 'markdown-it'
 import '../assets/github-markdown-css/github-markdown.css'
 import anchor from 'markdown-it-anchor';
 import toc from 'markdown-it-toc-done-right';
+import { fetchBlogData, getPostByFilename } from '../utils/blogData.js';
 
 
 const route = useRoute()
@@ -85,8 +87,24 @@ const loadMarkdown = async () => {
     }
 }
 
-// 初始進入加載
-onMounted(loadMarkdown)
+const post = ref(null);
+
+onMounted(async () => {
+    const data = await fetchBlogData();
+    const filename = route.params.title;
+    const foundPost = getPostByFilename(data, filename);
+    
+    if (foundPost) {
+        post.value = foundPost;
+        await loadMarkdown(); 
+    } else {
+        console.error("找不到對應的文章數據");
+        await loadMarkdown(); 
+    }
+});
+
+//onMounted(loadMarkdown);
+
 
 // 監聽路由變化
 watch(() => route.params.title, loadMarkdown)
