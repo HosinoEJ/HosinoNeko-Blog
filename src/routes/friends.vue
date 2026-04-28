@@ -34,7 +34,7 @@
           </a>
         </div>
 
-        <div class="apply-section div">
+        <div class="apply-section">
             <h2>申請交換友鏈</h2>
             <p><strong>如果你也想交換鏈接。請在你的網站添加本站後，通過<a href="mailto:hosinoeiji@gmail.com">郵件</a>告訴我：</strong></p>
             <ul>
@@ -138,8 +138,9 @@ onMounted(() => {
   color: #6b7280;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* 最多顯示兩行描述 */
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 最多顯示兩行描述 */
+  line-clamp: 2; /* 最多顯示兩行描述 */
   overflow: hidden;
 }
 

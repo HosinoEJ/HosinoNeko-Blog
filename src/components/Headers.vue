@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
-    <header>
+    <header class="div">
         <a href="/" class="icon">
             <img :src="$HeadImageX64px"/>
             HosinoNeko | website
@@ -13,19 +13,19 @@
             <a href="#/blog">文章</a>
         </page>
         <div class="rtmod">
-            <button onclick="settingDivOpen()" id="settingBtn">settings</button>
+            <button onclick="settingDivOpen()" id="settingBtn" button="2">settings</button>
         </div>
     </header>
 </template>
 <style scoped>
 header{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(242, 250, 255);
     padding: 1em 2em;
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px 0;
+    border-radius: 25px;
 }
 header > * {
     margin: 0 1em;
