@@ -19,13 +19,11 @@
 </template>
 <style scoped>
 header{
-    background-color: rgb(242, 250, 255);
     padding: 1em 2em;
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
 }
 header > * {
     margin: 0 1em;

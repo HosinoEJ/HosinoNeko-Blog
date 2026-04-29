@@ -1,17 +1,17 @@
 <template>
   <div class="blog-container">
     <nav class="tag-filter">
-        <button button="2"
+        <button
             @click="filterByTag(null)" 
-            :class="{ active: !currentTag }"
+            :button="currentTag == id ? '2' : '1'"
           >全部
         </button>
         
-        <button button="1"
+        <button
             v-for="(tagName, id) in allTags" 
             :key="id"
             @click="filterByTag(id)"
-            :class="{ active: currentTag == id }"
+            :button="currentTag == id ? '2' : '1'"
         >
             {{ tagName }}
         </button>

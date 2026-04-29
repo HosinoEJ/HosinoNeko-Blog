@@ -115,23 +115,21 @@ h1{
     margin: 0 auto;
 }
 
-/* 2. 修改側邊欄：從 fixed 改為 sticky */
 .toc-sidebar {
-  position: sticky; /* 關鍵：黏性定位 */
-  top: 40px;       /* 捲到距離視窗頂部 40px 的時候停住 */
-  width: 250px;    /* 適度加寬，避免文字太擠 */
+  position: sticky;
+  top: 40px;
+  width: 250px;
   flex-shrink: 0;  /* 防止目錄被文章擠扁 */
   max-height: calc(100vh - 80px); /* 限制高度，防止超過視窗 */
   overflow-y: auto;
   padding-left: 20px;
-  border-left: 1px solid #eee; /* 加一條細線區隔，質感更好 */
 }
 .blog-layout {
   display: flex;
-  flex-direction: row; /* 讓內容橫向排列 */
-  justify-content: center; /* 居中顯示 */
-  align-items: flex-start; /* 頂部對齊，這是 sticky 生效的關鍵 */
-  gap: 40px; /* 文章和目錄之間的間距 */
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -144,16 +142,6 @@ h1{
 }
 :deep(.toc-done-right) > ul {
   padding-left: 0; /* 第一層不縮進 */
-}
-
-:deep(.toc-done-right) a {
-  text-decoration: none;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-:deep(.toc-done-right) a:hover {
-  color: #42b983; /* Vue 綠 */
 }
 
 .blog-meta {

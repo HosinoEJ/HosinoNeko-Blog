@@ -8,6 +8,16 @@
     --color-meta: #7f8c8d;
     --card-bg: rgba(255, 255, 255, 0.527);
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: linear-gradient(135deg, #1a1c2c 0%, #4a596a 100%);
+    --color-title: #eceff4;
+    --color-text: #d8dee9;
+    --color-link: #5eb5f7;
+    --color-meta: #9ca3af;
+    --card-bg: rgba(0, 0, 0, 0.35);
+  }
+}
 
 body {
     margin: 0;
