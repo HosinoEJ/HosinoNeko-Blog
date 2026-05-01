@@ -12,8 +12,8 @@ on:
 
 env:
   TARGET_DIR: "Blog/"
-  #WEBHOOK_URL: "https://hosino-neko-sub-send.vercel.app"
-  WEBHOOK_URL: "https://uninvestigating-aidan-unconjectural.ngrok-free.dev"
+  WEBHOOK_URL: "https://hosino-neko-sub-send.vercel.app"
+  #WEBHOOK_URL: "https://uninvestigating-aidan-unconjectural.ngrok-free.dev"
 
 jobs:
   notify:
