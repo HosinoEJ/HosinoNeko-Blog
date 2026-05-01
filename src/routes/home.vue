@@ -4,6 +4,11 @@
     <h2>自介</h2>
     <p>真的好高興你可以看到這個網站，我是HosinoNeko，一名中國内地的跨性別者。</p>
     <p>有關我的具體故事請看<a href="/#/Blog/星野寧子的回憶錄">這篇文章</a></p>
+
+    <h2>訂閲</h2>
+    <p>點擊可以訂閲我的文章，當我有新的文章時會通知你</p>
+    <a href="https://forms.gle/v3Q9DCPZLApLHkFn8" button="2">訂閲</a>
+
     <h2>PROJECTS</h2>
     <p>NO COVNERSION THERAPY</p>
     <a href="https://victimsunion.org">官方網站</a>

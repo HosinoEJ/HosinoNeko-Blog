@@ -15,6 +15,7 @@ a:hover {
     margin: 2px;
     font-size: 17px;
     border: 0 solid #ffffff;
+    padding: 3px;
 }
 [button="1"] {
     background-color: #00000000;
