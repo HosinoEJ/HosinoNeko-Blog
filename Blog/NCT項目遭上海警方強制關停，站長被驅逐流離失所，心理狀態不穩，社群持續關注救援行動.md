@@ -24,4 +24,4 @@ NCT項目此前長期致力於反轉化治療（conversion therapy）相關資�
 
 （本文綜合@HosinoEJ、@LwrDHYyuxR22499、@siyu060910等X平台公開帖文及社群資訊整理，旨在客觀記錄事件全貌。如有最新進展，請以當事人最新發文為準。）
 
-By：Grok Ai
+By：Grok
