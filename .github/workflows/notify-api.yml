@@ -26,6 +26,7 @@ jobs:
       - name: Get changed files
         id: files
         run: |
+          git config core.quotepath false
           # tr '\n' ',' 是將換行轉為逗號，方便 API 處理
           ADDED=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_DIR" | tr '\n' ',' | sed 's/,$//')
           MODIFIED=$(git diff --name-only --diff-filter=M ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_DIR" | tr '\n' ',' | sed 's/,$//')
