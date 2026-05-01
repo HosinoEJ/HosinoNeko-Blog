@@ -6,7 +6,8 @@
     "4": "技術/工具",
     "5": "法律",
     "6": "更新",
-    "7": "NCT"
+    "7": "NCT",
+    "8": "電話卡"
   },
   "Data": [
     {
@@ -105,12 +106,22 @@
     {
       "title": "經過長時間的擱置，訂閲系統正式亮相",
       "author": "HosinoNeko",
-      "CreationDate": "2026年4月27日",
+      "CreationDate": "2026年5月1日",
       "Language": "正體中文",
       "filename": "經過長時間的擱置，訂閲系統正式亮相",
       "tagid": [
         "4",
         "6"
+      ]
+    },
+    {
+      "title": "關於3HK電話卡的使用感受",
+      "author": "HosinoNeko",
+      "CreationDate": "2026年5月1日",
+      "Language": "正體中文",
+      "filename": "關於3HK電話卡的使用感受",
+      "tagid": [
+        "8"
       ]
     }
   ]
