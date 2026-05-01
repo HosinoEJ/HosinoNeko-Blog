@@ -35,7 +35,7 @@ jobs:
 
 
       - name: Send POST request to API
-        if: steps.files.outputs.added != '' || steps.files.outputs.modified != ''
+        #if: steps.files.outputs.added != '' || steps.files.outputs.modified != ''
         run: |
           payload=$(jq -n \
             --arg project "${{ github.repository }}" \
