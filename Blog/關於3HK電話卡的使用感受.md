@@ -32,6 +32,8 @@
 
 外遊社交數據 5GB
 
+合計45GB
+
 超過用量后每GB價格15HKD，但是先別急著買，我們算一筆賬：
 
 其實你是可以叠加服務組合的，如果你45GB用完的話，可以再購買一次相同套餐(流量可叠加，具體請看[注意](#注意))，相當於268HKD一次性購買了45GB的流量，平均下來每GB5.95HKD。
@@ -197,13 +199,15 @@ https://www.three.com.hk/prepaid/account/tc/rnr-reg
 
 TikTok別想啦，但是ChatGPT，其他人都説在香港無法訪問，但我卻沒有問題，不知道是爲何。不過當我通過USB網路共享之後，chatgpt説我正在使用vpn不能進入，我還要在電腦再套一個vpn（笑）
 
+關於Telegram需要提一嘴，讓我意外的是運營商會向Telegram收取高昂費用，導致需要開通Premium才可以正常使用。
+
 ## 常見問題
 
 ### 如果我需要特別多的流量怎麽辦？
 
 可以在網上尋找虛擬Esim，我正在使用的是KKday的【50% OFF】中國無限數據 eSIM，低至一天141TWD(34.93HKD，30.44CNY在岸)高至30天1303TWD(322.78HKD，281.29CNY在岸)
 
-之後會出一期詳細教程來説明。
+詳細文章請看[這裏](/#/blog/關於KKday一天下來的使用體驗)
 
 [留個口，我自己用](https://www.kkday.com/zh-tw/product/121642-china-esim-unlimited-data)
 

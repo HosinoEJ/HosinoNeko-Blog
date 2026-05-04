@@ -7,7 +7,8 @@
     "5": "法律",
     "6": "更新",
     "7": "NCT",
-    "8": "電話卡"
+    "8": "電話卡",
+    "9": "戒網癮學校"
   },
   "Data": [
     {
@@ -79,7 +80,8 @@
       "Language": "正體中文",
       "filename": "關於心種子教育違法辦學的控告",
       "tagid": [
-        "5"
+        "5",
+        "9"
       ]
     },
     {
@@ -90,7 +92,8 @@
       "filename": "update_notorsion",
       "tagid": [
         "6",
-        "7"
+        "7",
+        "9"
       ]
     },
     {
@@ -122,6 +125,28 @@
       "filename": "關於3HK電話卡的使用感受",
       "tagid": [
         "8"
+      ]
+    },
+    {
+      "title": "關於KKday一天下來的使用體驗",
+      "author": "HosinoNeko",
+      "CreationDate": "2026年5月3日",
+      "Language": "正體中文",
+      "filename": "關於KKday一天下來的使用體驗",
+      "tagid": [
+        "8"
+      ]
+    },
+    {
+      "title": "從戒網癮學校出來，我發生了這些事情...",
+      "author": "HosinoNeko",
+      "CreationDate": "2026年5月3日",
+      "Language": "正體中文",
+      "filename": "從戒網癮學校出來，我發生了這些事情...",
+      "tagid": [
+        "9",
+        "1",
+        "3"
       ]
     }
   ]
