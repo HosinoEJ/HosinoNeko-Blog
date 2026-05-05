@@ -8,7 +8,11 @@
 
         <main fadeUp="true">
             <h1>{{ route.params.title }}</h1>
-            <div class="blog-meta"></div>
+            <div class="blog-meta" v-if="post">
+                <span class="meta-item">作者：{{ post.author }}，</span>
+                <span class="meta-item">發布時間：{{ post.CreationDate }}，</span>
+                <span class="meta-item">語言：{{ post.Language }}</span>
+            </div>
             <div class="markdown-body" v-html="html"></div>
         </main>
     </div>

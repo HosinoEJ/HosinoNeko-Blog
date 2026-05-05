@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-container">
+  <div class="blog-container" fadeUp="true">
     <nav class="tag-filter">
         <button
             @click="filterByTag(null)" 

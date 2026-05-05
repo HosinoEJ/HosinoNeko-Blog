@@ -1,5 +1,5 @@
 <template>
-  <div class="friends-page">
+  <div class="friends-page" fadeUp="true">
     <main class="main">
       <div class="container">
         <div class="header">
@@ -14,7 +14,6 @@
             :href="friend.url" 
             target="_blank" 
             class="link-card DivStyle-Glass"
-            fadeUp="true"
           >
             <img 
               :src="friend.avatar" 

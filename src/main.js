@@ -30,7 +30,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(), // 使用 Hash 模式，對應你原本的邏輯
+  history: createWebHashHistory(),
   routes,
 })
 
