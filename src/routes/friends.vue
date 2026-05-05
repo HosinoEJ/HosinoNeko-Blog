@@ -14,6 +14,7 @@
             :href="friend.url" 
             target="_blank" 
             class="link-card DivStyle-Glass"
+            fadeUp="true"
           >
             <img 
               :src="friend.avatar" 
@@ -43,7 +44,7 @@
                 <li><strong>描述：</strong> 一句話介紹你的網站</li>
                 <li><strong>頭像：</strong> 公網可訪問的圖片鏈接</li>
                 <li>
-                    <strong>大頭照顏色</strong> 可以是顏色英文名，或者十六進制顏色代碼。例：#3388bb<br>
+                    <strong>大頭照顏色</strong> 可以是顏色英文名，或者十六進制顏色代碼。例：<span style="color: white; background-color: #3388bb;">#3388bb</span><br>
                     <img src="https://avatars.githubusercontent.com/u/177436503?v=4" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; border: 2px solid #3388bb;">
                 </li>
             </ul>

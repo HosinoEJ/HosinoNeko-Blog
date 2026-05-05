@@ -1,18 +1,24 @@
 <script setup>
-//import HelloWorld from './components/HelloWorld.vue'
-//import TheWelcome from './components/TheWelcome.vue'
 
 //頂部欄和底部欄
 import Headers from './components/Headers.vue'
 import Foot from './components/Footer.vue'
 import statusForRt from './components/statusForRt.vue'
 import Banne from './components/Banne.vue';
+
+import { computed } from 'vue';
+import { useDeviceType } from './utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
+
+const mainStyle = computed(() => ({
+    flexDirection: (isMobile.value || isTablet.value) ? 'column' : 'row',
+}));
 </script>
 
 <template>
     <Headers />
     <Banne />
-    <main class="content">
+    <main class="content" :style="mainStyle" fadeUp="true">
         <div class="left div"><router-view /></div>
         <statusForRt />
     </main>
@@ -24,11 +30,11 @@ import Banne from './components/Banne.vue';
     /* 自動撐開，佔滿剩餘空間，將 Footer 推到底部 */
     flex: 1;
     display: flex;
-    flex-direction: row;
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
 }
 .left{
-    width: 80%;
+    flex: 1;
+    min-width: 0;
 }
 </style>

@@ -1,5 +1,9 @@
+<script setup>
+import { useDeviceType } from '../utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
+</script>
 <template>
-    <banner id="banner">
+    <banner id="banner" fadeUp="true">
         <h1>Welcome to Website of HosinoNeko</h1>
 
         <h2>點解我眼角長期都帶住淚？因為我一直被困喺一個暗無天日嘅十月入面</h2>
@@ -8,6 +12,7 @@
 <style scoped>
 banner{
     height: calc(50vh - 66px);
+    margin:  0 10%;
     display: flex;
 
     align-items: center;

@@ -1,5 +1,5 @@
 <template>
-    <div class="statusRtDiv">
+    <div class="statusRtDiv" :style="RtDivStyle" fadeUp="true">
         <survivalTime />
         <adult />
         <allLinks />
@@ -10,10 +10,11 @@ import survivalTime from './tools/survivalTime.vue';
 import adult from './tools/adult.vue'
 import allLinks from './tools/allLinks.vue'
 
-</script>
+import { computed } from 'vue';
+import { useDeviceType } from '../utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
 
-<style scoped>
-.statusRtDiv{
-    width: 20%;
-}
-</style>
+const RtDivStyle = computed(() => ({
+    width: (isMobile.value || isTablet.value) ? '80%' : '20%',
+}));
+</script>

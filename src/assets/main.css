@@ -42,6 +42,6 @@ h1 {
     border-radius: 16px;
     box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
     margin: 20px;
-    animation: fadeInUp 0.8s ease-out 0.4s both;
     overflow: visible;
+    transform: display 0.3s ease-out;
 }

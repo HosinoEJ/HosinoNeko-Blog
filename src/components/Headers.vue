@@ -1,21 +1,36 @@
 <script setup>
+import { useDeviceType } from '../utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
+
+const openList = () => {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    menu.style.animation = 'fadeIn 0.3s';
+};
 </script>
 <template>
     <header class="div">
         <a href="/" class="icon">
             <img :src="$HeadImageX64px"/>
-            HosinoNeko | website
+            <span v-if="!isMobile">HosinoNeko | website</span>
+            <span v-else>HosinoNeko</span>
         </a>
-        <page>
+        <page v-if="!isMobile">
             <a href="#/">首頁</a>
             <a href="#/friends">友情鏈接</a>
             <a href="#/about">關於本站</a>
             <a href="#/blog">文章</a>
         </page>
-        <div class="rtmod">
-            <button onclick="settingDivOpen()" id="settingBtn" button="2">settings</button>
+        <div class="rtmod" v-else>
+            <button @click="openList" id="openListBtn" button="2">三</button>
         </div>
     </header>
+    <div class="div mobile-menu" id="mobileMenu" v-if="!isTablet">
+        <a href="#/">首頁</a>
+        <a href="#/friends">友情鏈接</a>
+        <a href="#/about">關於本站</a>
+        <a href="#/blog">文章</a>
+    </div>
 </template>
 <style scoped>
 header{
@@ -46,5 +61,9 @@ header > :not(.icon,.rtmod){
 }
 header page a{
     margin: 0 20px;
+}
+.mobile-menu {
+    display: none;
+    flex-direction: column;
 }
 </style>

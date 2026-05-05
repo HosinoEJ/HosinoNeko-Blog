@@ -1,21 +1,21 @@
 <template>
-    <div class="blog-layout" @click="handleAnchorClick">
-        <aside class="toc-sidebar div" v-if="tocHtml">
+    <div class="blog-layout" @click="handleAnchorClick" :style="layoutStyle">
+        <aside class="toc-sidebar div" v-if="tocHtml && !isMobile" fadeUp="true">
             <a href="/#/blog">←查看其它文章</a>
             <div class="toc-title"><h3>目錄</h3></div>
             <div v-html="tocHtml"></div>
         </aside>
 
-        <main>
-        <h1>{{ route.params.title }}</h1>
-        <div class="blog-meta"></div>
-        <div class="markdown-body" v-html="html"></div>
+        <main fadeUp="true">
+            <h1>{{ route.params.title }}</h1>
+            <div class="blog-meta"></div>
+            <div class="markdown-body" v-html="html"></div>
         </main>
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch , computed } from 'vue'
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import '../assets/github-markdown-css/github-markdown.css'
@@ -23,6 +23,12 @@ import anchor from 'markdown-it-anchor';
 import toc from 'markdown-it-toc-done-right';
 import { fetchBlogData, getPostByFilename } from '../utils/blogData.js';
 
+import { useDeviceType } from '../utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
+
+const layoutStyle = computed(() => ({
+    display: (isMobile.value || isTablet.value) ? 'block' : 'flex',
+}));
 
 const route = useRoute()
 const html = ref('')
@@ -111,7 +117,6 @@ watch(() => route.params.title, loadMarkdown)
 </script>
 <style scoped>
 h1{
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -125,12 +130,13 @@ h1{
   padding-left: 20px;
 }
 .blog-layout {
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1200px;
+  /*max-width: 1200px; */
   margin: 0 auto;
   padding: 20px;
 }
