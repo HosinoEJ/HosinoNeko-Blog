@@ -9,6 +9,9 @@
     <p>點擊可以訂閲我的文章，當我有新的文章時會通知你</p>
     <a href="https://forms.gle/v3Q9DCPZLApLHkFn8" button="2">訂閲</a>
 
+    <p>如果你沒有Google帳號，可以通過以下方式訂閲：</p>
+    <a href="https://forms.cloud.microsoft/r/uDGJST7hLt" button="1">訂閲</a>
+
     <h2>PROJECTS</h2>
     <p>NO COVNERSION THERAPY</p>
     <a href="https://victimsunion.org">官方網站</a>
