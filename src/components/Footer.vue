@@ -45,6 +45,11 @@ footer{
     width: auto;
     vertical-align: middle;
     border-radius: 50%;
+    transform: scale(1);
+}
+.footerLink img:hover{
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
 }
 
 .footerData{
