@@ -3,12 +3,14 @@
         <survivalTime />
         <adult />
         <allLinks />
+        <spotify />
     </div>
 </template>
 <script setup>
 import survivalTime from './tools/survivalTime.vue';
 import adult from './tools/adult.vue'
 import allLinks from './tools/allLinks.vue'
+import spotify from './tools/spotify.vue'
 
 import { computed } from 'vue';
 import { useDeviceType } from '../utils/isMobie';
