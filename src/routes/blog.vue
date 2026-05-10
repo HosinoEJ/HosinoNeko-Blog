@@ -126,10 +126,10 @@ h1{
 
 .toc-sidebar {
   position: sticky;
-  top: 90px;
+  top: 120px;
   width: 250px;
   flex-shrink: 0;  /* 防止目錄被文章擠扁 */
-  max-height: calc(100vh - 80px); /* 限制高度，防止超過視窗 */
+  max-height: calc(100vh - 180px); /* 限制高度，防止超過視窗 */
   overflow-y: auto;
   padding-left: 20px;
 }

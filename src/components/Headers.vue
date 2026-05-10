@@ -7,6 +7,14 @@ const openList = () => {
     menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     menu.style.animation = 'fadeIn 0.3s';
 };
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY === 0) {
+        header.style.backgroundColor = 'var(--card-bg)';
+    } else {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+    }
+});
 </script>
 <template>
     <header class="div">
@@ -41,7 +49,8 @@ header{
     justify-content: center;
     align-items: center;
     position: sticky;
-    top: 0;
+    top: 1em;
+    transition: background-color 0.5s ease;
 }
 header > * {
     margin: 0 1em;
