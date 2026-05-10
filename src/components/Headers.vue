@@ -22,7 +22,7 @@ const openList = () => {
             <a href="#/blog">文章</a>
         </page>
         <div class="rtmod" v-else fadeUp="true">
-            <button @click="openList" id="openListBtn" button="2">三</button>
+            <button @click="openList" id="openListBtn" button="2">……</button>
         </div>
     </header>
     <div class="div mobile-menu" id="mobileMenu" v-if="!isTablet">
@@ -36,9 +36,12 @@ const openList = () => {
 header{
     padding: 1em 2em;
     font-size: 18px;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
 header > * {
     margin: 0 1em;

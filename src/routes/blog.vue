@@ -126,7 +126,7 @@ h1{
 
 .toc-sidebar {
   position: sticky;
-  top: 40px;
+  top: 90px;
   width: 250px;
   flex-shrink: 0;  /* 防止目錄被文章擠扁 */
   max-height: calc(100vh - 80px); /* 限制高度，防止超過視窗 */
