@@ -13,7 +13,7 @@
             :key="friend.url" 
             :href="friend.url" 
             target="_blank" 
-            class="link-card DivStyle-Glass"
+            class="link-card"
           >
             <img 
               :src="friend.avatar" 
@@ -98,22 +98,6 @@ onMounted(() => {
   gap: 20px;
 }
 
-/* 卡片基礎樣式 */
-.link-card {
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  text-decoration: none;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.9);
-}
 
 /* 頭像樣式 */
 .friend-avatar {

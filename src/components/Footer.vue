@@ -7,7 +7,7 @@
             <a href="https://github.com/HosinoEJ">Github</a>
             <a>E-mail</a>
             <a>Telegram</a>
-            <a href="/"><img :src="$HeadImageX64px"/></a>
+            <a href="/#/"><img :src="$HeadImageX64px"/></a>
             <a>BiliBili</a>
             <a>Youtube</a>
             <a href="https://x.com/HosinoEJ">Twitter</a>

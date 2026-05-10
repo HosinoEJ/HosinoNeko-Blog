@@ -20,7 +20,7 @@
     <hr />
 
     <main class="post-list">
-        <router-link v-for="post in filteredPosts" :key="post.filename" :to="`/blog/${post.filename}`" class="post-card">
+        <router-link v-for="post in filteredPosts" :key="post.filename" :to="`/blog/${post.filename}`" class="link-card post-card">
             <h3>{{ post.title }}</h3>
             <div class="meta">
                 <span>作者：{{ post.author }}</span> | 
@@ -71,4 +71,8 @@ const allTags = computed(() => blogData.value.TagList);
 </script>
 
 <style scoped>
+.post-card {
+    display: block;
+    padding: 15px;
+}
 </style>

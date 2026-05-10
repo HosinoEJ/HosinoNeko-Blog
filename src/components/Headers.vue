@@ -10,7 +10,7 @@ const openList = () => {
 </script>
 <template>
     <header class="div">
-        <a href="/" class="icon" fadeUp="true">
+        <a href="/#/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
             <span v-if="!isMobile">HosinoNeko | website</span>
             <span v-else>HosinoNeko</span>
