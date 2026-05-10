@@ -12,6 +12,7 @@ import NotFound from './routes/404.vue'
 import license from './routes/license.vue'
 import blogs from './routes/blogs.vue'
 import blog from './routes/blog.vue'
+import nct from './routes/nct.vue'
 
 const app = createApp(App)
 
@@ -26,6 +27,7 @@ const routes = [
   { path: '/license', component: license },
   { path: '/blog', component: blogs },
   { path: '/blog/:title', component: blog },
+  { path: '/nct', component: nct },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 

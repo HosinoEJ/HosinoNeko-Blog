@@ -15,7 +15,7 @@
 
         <h2>PROJECTS</h2>
         <p>NO COVNERSION THERAPY</p>
-        <a href="https://victimsunion.org">官方網站</a>
+        <a href="https://victimsunion.org">官方網站</a> | <a href="/#/nct">地圖</a>
 
         <h2>經歷</h2>
         <p>曾經因爲跨性別者身份被送進戒網癮學校</p>
