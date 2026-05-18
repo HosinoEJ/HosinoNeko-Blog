@@ -22,18 +22,18 @@ app.config.globalProperties.$HeadImageX64px = 'https://avatars.githubusercontent
 
 //路由表
 const routes = [
-  { path: '/', component: Home },
-  { path: '/friends', component: Friends },
-  { path: '/license', component: license },
-  { path: '/blog', component: blogs },
-  { path: '/blog/:title', component: blog },
-  { path: '/nct', component: nct },
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
+    { path: '/', component: Home },
+    { path: '/friends', component: Friends },
+    { path: '/license', component: license },
+    { path: '/blog', component: blogs },
+    { path: '/blog/:title', component: blog },
+    { path: '/nct', component: nct },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
+    history: createWebHashHistory(),
+    routes,
 })
 
 app.use(router)//注冊路由
