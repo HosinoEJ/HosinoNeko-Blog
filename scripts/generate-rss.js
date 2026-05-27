@@ -73,5 +73,11 @@ formattedPosts.forEach((post) => {
 });
 
 // 5. 輸出成 rss.xml 到 public 目錄
-fs.writeFileSync(outputXmlPath, feed.rss2());
-console.log('✨ RSS Feed (rss.xml) 成功根據 blogData.json 生成！');
+let xmlContent = feed.rss2();
+
+// 注入 XSLT 樣式表鏈接（插在 <?xml ... ?> 標籤的後面）
+const xsltLine = '\n<?xml-stylesheet href="/rss-style.xsl" type="text/xsl"?>';
+xmlContent = xmlContent.replace('?>', '?>' + xsltLine);
+
+fs.writeFileSync(outputXmlPath, xmlContent);
+console.log('✨ RSS Feed (rss.xml) 成功更新並注入樣式表！');
