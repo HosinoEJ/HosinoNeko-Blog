@@ -7,6 +7,7 @@
             <a href="https://github.com/HosinoEJ"><img src="/icon/github.svg" /></a>
             <a href="mailto:hosinoeiji@gmail.com"><img src="/icon/gmail.svg" /></a>
             <a href="https://t.me/@HosinoNeko_meow"><img src="/icon/telegram.svg" /></a>
+            <a href="/rss.xml"><img src="/icon/rss.svg" /></a>
             <a href="/#/"><img class="my-head" :src="$HeadImageX64px"/></a>
             <a href="https://space.bilibili.com/1140685131"><img src="/icon/bilibili.svg" /></a>
             <a href="https://www.youtube.com/@HosinoNekoMeow"><img src="/icon/youtube.svg" /></a>
