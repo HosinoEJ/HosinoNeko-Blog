@@ -4,7 +4,7 @@ import { Feed } from 'feed';
 
 // 1. 基礎配置（請替換為你的真實域名）
 const BLOG_URL = 'https://hosinoneko.me'; 
-const BLOG_TITLE = 'HOSINONEKO-BLOG';
+const BLOG_TITLE = 'HOSINONEKO BLOG';
 const BLOG_DESC = 'HosinoNeko Blog';
 
 const feed = new Feed({
