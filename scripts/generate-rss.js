@@ -13,7 +13,7 @@ const feed = new Feed({
   id: BLOG_URL,
   link: BLOG_URL,
   language: 'zh-TW', // 正體中文
-  favicon: `${BLOG_URL}/favicon.ico`,
+  favicon: `https://avatars.githubusercontent.com/u/177436503?v=4&size=64`,
   copyright: `All rights reserved ${new Date().getFullYear()}, HosinoNeko`,
 });
 
