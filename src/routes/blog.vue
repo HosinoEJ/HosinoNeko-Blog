@@ -18,7 +18,7 @@
                 <Giscus
                     repo="HosinoEJ/HosinoNeko-Blog"
                     repoId="R_kgDOSKjMXg"
-                    category="Show and tell"
+                    category="message"
                     categoryId="DIC_kwDOSKjMXs4C-AfD"
                     mapping="title"
                     strict="1"
