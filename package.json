@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-rss.js", 
+    "prebuild": "node scripts/generate-rss.js",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@giscus/vue": "^3.1.1",
     "feed": "^5.2.1",
     "leaflet": "^1.9.4",
     "markdown-it": "^14.1.1",

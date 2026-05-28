@@ -14,11 +14,28 @@
                 <span class="meta-item">語言：{{ post.Language }}</span>
             </div>
             <div class="markdown-body" v-html="html"></div>
+            <div class="comments-container">
+                <Giscus
+                    repo="HosinoEJ/HosinoNeko-Blog"
+                    repoId="R_kgDOSKjMXg"
+                    category="Show and tell"
+                    categoryId="DIC_kwDOSKjMXs4C-AfD"
+                    mapping="pathname"
+                    strict="1"
+                    reactionsEnabled="1"
+                    emitMetadata="1"
+                    inputPosition="top"
+                    theme="preferred_color_scheme"
+                    lang="zh-TW"
+                    loading="lazy"
+                />
+            </div>
         </main>
     </div>
 </template>
 
 <script setup>
+import Giscus from '@giscus/vue';
 import { ref, onMounted, watch , computed } from 'vue'
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
