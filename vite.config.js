@@ -16,7 +16,7 @@ export default defineConfig(({ command }) => {
       }),
     ],
     // 完美的动态 Base 配置：build 时用 /blog/，本地 dev 用 /
-    base: command === 'build' ? '/blog/' : '/',
+    base: '/',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))

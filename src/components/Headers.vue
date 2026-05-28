@@ -18,26 +18,26 @@ window.addEventListener('scroll', () => {
 </script>
 <template>
     <header class="div">
-        <a href="/#/" class="icon" fadeUp="true">
+        <a href="/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
             <span v-if="!isMobile">HosinoNeko | website</span>
             <span v-else>HosinoNeko</span>
         </a>
         <page v-if="!isMobile" fadeUp="true">
-            <a href="#/">首頁</a>
-            <a href="#/friends">友情鏈接</a>
-            <a href="#/about">關於本站</a>
-            <a href="#/blog">文章</a>
+            <a href="/">首頁</a>
+            <a href="/friends">友情鏈接</a>
+            <a href="/about">關於本站</a>
+            <a href="/blog">文章</a>
         </page>
         <div class="rtmod" v-else fadeUp="true">
             <button @click="openList" id="openListBtn" button="2">……</button>
         </div>
     </header>
     <div class="div mobile-menu" id="mobileMenu" v-if="!isTablet">
-        <a href="#/">首頁</a>
-        <a href="#/friends">友情鏈接</a>
-        <a href="#/about">關於本站</a>
-        <a href="#/blog">文章</a>
+        <a href="/">首頁</a>
+        <a href="/friends">友情鏈接</a>
+        <a href="/about">關於本站</a>
+        <a href="/blog">文章</a>
     </div>
 </template>
 <style scoped>

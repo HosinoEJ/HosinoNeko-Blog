@@ -1,7 +1,7 @@
 import './assets/main.css'
 import './assets/ctrl.css'
 
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -32,7 +32,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(),
     routes,
 })
 
