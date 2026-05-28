@@ -20,7 +20,7 @@
                     repoId="R_kgDOSKjMXg"
                     category="Show and tell"
                     categoryId="DIC_kwDOSKjMXs4C-AfD"
-                    mapping="pathname"
+                    mapping="title"
                     strict="1"
                     reactionsEnabled="1"
                     emitMetadata="1"
@@ -120,6 +120,7 @@ onMounted(async () => {
     const data = await fetchBlogData();
     const filename = route.params.title;
     const foundPost = getPostByFilename(data, filename);
+    document.title = filename;
     
     if (foundPost) {
         post.value = foundPost;

@@ -16,6 +16,7 @@ import L from 'leaflet';
 const mapContainer = ref(null);
 
 onMounted(() => {
+    document.title = 'NCT'
   // 1. 初始化地图
   const map = L.map(mapContainer.value).setView([36.06, 120.38], 6);
 

@@ -1,4 +1,9 @@
 <script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    document.title = 'HosinoNeko Blog'
+})
 </script>
 <template>
     <div fadeUp="true">

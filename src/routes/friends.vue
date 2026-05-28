@@ -81,6 +81,7 @@ const loadFriends = async () => {
 
 onMounted(() => {
   loadFriends();
+  document.title = '星野的朋友們'
 });
 </script>
 

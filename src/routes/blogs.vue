@@ -51,6 +51,7 @@ const blogData = ref({ TagList: {}, Data: [] });
 
 onMounted(async () => {
     blogData.value = await fetchBlogData();
+    document.title = '全部文章'
 });
 
 // 使用 computed 自動處理篩選，對應原本的 QTag 邏輯
