@@ -38,3 +38,5 @@ const router = createRouter({
 
 app.use(router)//注冊路由
 app.mount('#app')
+
+console.info('你試試點擊五下副標題呢喵？')

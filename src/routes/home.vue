@@ -16,7 +16,7 @@ onMounted(() => {
         <a href="https://forms.gle/v3Q9DCPZLApLHkFn8" button="2">訂閲</a>
 
         <p>如果你沒有Google帳號，可以通過以下方式訂閲：</p>
-        <a href="https://forms.cloud.microsoft/r/uDGJST7hLt" button="1">訂閲</a>
+        <a href="https://forms.cloud.microsoft/r/uDGJST7hLt" button="1">訂閲</a> <a href="/rss.xml">RSS訂閲</a>
 
         <h2>PROJECTS</h2>
         <p>NO COVNERSION THERAPY</p>
