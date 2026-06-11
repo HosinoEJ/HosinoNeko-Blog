@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Feed } from 'feed';
+import { marked } from 'marked';
 
 // 1. 基礎配置（請替換為你的真實域名）
 const BLOG_URL = 'https://hosinoneko.me'; 
@@ -20,6 +21,9 @@ const feed = new Feed({
 // 2. 讀取並解析你的 blogData.json
 const jsonPath = path.join(process.cwd(), 'public', 'blogData.json');
 const outputXmlPath = path.join(process.cwd(), 'public', 'rss.xml');
+
+
+const POSTS_DIR = path.join(process.cwd(), 'Blog');
 
 if (!fs.existsSync(jsonPath)) {
   console.error('❌ 未找到 blogData.json 文件，請檢查路徑！');
@@ -56,6 +60,25 @@ formattedPosts.forEach((post) => {
   // 獲取標籤名稱
   const categories = (post.tagid || []).map(id => tagList[id]).filter(Boolean);
 
+  let htmlContent = '';
+  try {
+    // 根據你的實際文件後綴調整，這裡假設是 .md 文件
+    // 如果你的 filename 已經自帶後綴，就改成 `${post.filename}`
+    const articlePath = path.join(POSTS_DIR, `${post.filename}.md`); 
+    
+    if (fs.existsSync(articlePath)) {
+      const rawMarkdown = fs.readFileSync(articlePath, 'utf-8');
+      
+      // 1. 如果你的 Markdown 頂部有 Front Matter（---包裹的元數據），需要去掉它
+      const cleanMarkdown = rawMarkdown.replace(/^---[\s\S]*?---\n/, '');
+      
+      // 2. 將 Markdown 轉換為 HTML 字符串
+      htmlContent = marked.parse(cleanMarkdown);
+    }
+  } catch (err) {
+    console.warn(`⚠️ 無法讀取文章正文: ${post.filename}`, err);
+  }
+
   feed.addItem({
     title: post.title,
     id: postUrl,
@@ -69,6 +92,7 @@ formattedPosts.forEach((post) => {
     category: categories.map(name => ({ name })),
     // 由於 JSON 中沒有正文，這裡可以留空，或者放標籤作為導讀
     description: `分類：${categories.join(', ')} | 語言：${post.Language}`,
+    content: htmlContent || `分類：${categories.join(', ')}（暫無正文預覽，請點擊鏈接閱讀）`,
   });
 });
 
