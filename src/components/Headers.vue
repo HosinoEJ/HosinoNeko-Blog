@@ -2,6 +2,7 @@
 import { useDeviceType } from '../utils/isMobie';
 const { isMobile, isTablet } = useDeviceType();
 
+//有機會給他嗎的改掉
 const openList = () => {
     const menu = document.getElementById('mobileMenu');
     menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
@@ -10,14 +11,16 @@ const openList = () => {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY === 0) {
-        header.style.backgroundColor = 'var(--card-bg)';
+        //header.style.backgroundColor = 'var(--card-bg)';
+        header.classList.remove('div');
     } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+        //header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+        header.classList.add('div');
     }
 });
 </script>
 <template>
-    <header class="div">
+    <header>
         <a href="/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
             <span v-if="!isMobile">HosinoNeko | website</span>
@@ -46,11 +49,11 @@ header{
     font-size: 18px;
     z-index: 100;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 1em;
-    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
 }
 header > * {
     margin: 0 1em;
@@ -63,15 +66,17 @@ header img {
     border-radius: 50%;
 }
 header .icon {
-    margin-right: auto;
+    /*margin-right: auto;*/
     text-decoration: none;
 }
 header .rtmod{
     margin-left: auto;
 }
+/*
 header > :not(.icon,.rtmod){
     position:absolute
 }
+    */
 header page a{
     margin: 0 20px;
 }

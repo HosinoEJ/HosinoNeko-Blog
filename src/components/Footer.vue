@@ -48,6 +48,12 @@ footer{
     margin: 0 5px;
     transform: scale(1);
 }
+
+@media (prefers-color-scheme: dark) {
+    img:not(.my-head){
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
+}
 .footerLink img:not(.my-head){
     height: 2em;
 }
