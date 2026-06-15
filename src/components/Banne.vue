@@ -1,9 +1,10 @@
 <script setup>
 import { useDeviceType } from '../utils/isMobie';
 const { isMobile, isTablet } = useDeviceType();
-import { ref, onUnmounted } from 'vue';
+import { ref, onUnmounted, watch, onMounted } from 'vue';
 import MidiPlayer from 'midi-player-js';
 import Soundfont from 'soundfont-player';
+import { useRoute } from 'vue-router';
 
 
 const clickCount = ref(0);
@@ -73,12 +74,34 @@ const startAndPlayMIDI = async () => {
   }
 };
 
+const route = useRoute();
+const checkBannerHeight = () => {
+  const bannerEl = document.getElementById('banner');
+  if (bannerEl) {
+    if (route.fullPath !== '/') {
+      bannerEl.style.height = 'calc(50vh - 66px)';
+    } else {
+      bannerEl.style.height = 'calc(100vh - 66px)'; // 回歸預設值
+    }
+  }
+};
+
+onMounted(() => {
+  checkBannerHeight();
+});
 
 // 組件卸載時務必釋放記憶體
 onUnmounted(() => {
   if (player) player.stop();
   if (audioContext) audioContext.close();
 });
+
+
+
+watch(() => route.fullPath, () => {
+  checkBannerHeight();
+});
+
 
 </script>
 <template>
@@ -94,7 +117,7 @@ onUnmounted(() => {
 </template>
 <style scoped>
 banner{
-    height: calc(50vh - 66px);
+    height: calc(100vh - 66px);
     margin:  0 10%;
     display: flex;
 
