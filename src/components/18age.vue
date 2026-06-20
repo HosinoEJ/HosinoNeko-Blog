@@ -84,6 +84,16 @@ const timelineData = [
     content: "被迫的..."
   },
   {
+    year: '2026-6-7',
+    title: '高考',
+    content: '要結束了...'
+  },
+  {
+    year: "2026-6-16",
+    title: "淮北之音",
+    content: "  前往淮北上訴，第一次向機構攻擊"
+  },
+  {
     year: "2026-8-8",
     title: "Level 18",
     content: "你已解鎖全部DLC..."

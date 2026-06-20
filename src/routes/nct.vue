@@ -4,8 +4,8 @@
 </style>
 
 <template>
-    <h1>机构综合地图</h1>
-    <div id="map" ref="mapContainer"></div>
+    <h1 class="div">机构综合地图</h1>
+    <div id="map" ref="mapContainer" style="border-radius: 20px; box-shadow: 0 10px 25px rgb(0 0 0 / 24%);"></div>
 </template>
 
 <script setup>

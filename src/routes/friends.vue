@@ -7,7 +7,7 @@
           <p>歡迎所有星野醬的好朋友喵（後宮）</p>
         </div>
 
-        <div class="links-grid">
+        <div class="links-grid div">
           <a 
             v-for="friend in friendsData.friends" 
             :key="friend.url" 
@@ -35,6 +35,7 @@
         </div>
 
         <div class="apply-section">
+          <div class="div">
             <h2>申請交換友鏈</h2>
             <p><strong>如果你也想交換鏈接。請在你的網站添加本站後，通過<a href="mailto:hosinoeiji@gmail.com">郵件</a>告訴我：</strong></p>
             <ul>
@@ -47,7 +48,9 @@
                     <img src="https://avatars.githubusercontent.com/u/177436503?v=4" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; border: 2px solid #3388bb;">
                 </li>
             </ul>
+          </div>
 
+          <div class="div">
             <p><strong>如果想將本站加到您的網站友鏈的話，請將下面資訊加入您的友鏈頁面：</strong></p>
             <ul>
                 <li><strong>名稱：</strong> Website of HosinoNeko</li>
@@ -56,6 +59,7 @@
                 <li><strong>頭像：</strong> <a src="https://avatars.githubusercontent.com/u/177436503?v=4">https://avatars.githubusercontent.com/u/177436503?v=4</a><br>
                 <img src="https://avatars.githubusercontent.com/u/177436503?v=4" width="50px" style="border-radius: 50%;"/></li>
             </ul>
+          </div>
         </div>
       </div>
     </main>

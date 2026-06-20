@@ -1,6 +1,6 @@
 <template>
   <div class="blog-container" fadeUp="true">
-    <nav class="tag-filter">
+    <nav class="tag-filter div">
         <button
             @click="filterByTag(null)" 
             :button="currentTag == id ? '2' : '1'"
@@ -17,10 +17,8 @@
         </button>
     </nav>
 
-    <hr />
-
     <main class="post-list">
-        <router-link v-for="post in filteredPosts" :key="post.filename" :to="`/blog/${post.filename}`" class="link-card post-card">
+        <router-link v-for="post in filteredPosts" :key="post.filename" :to="`/blog/${post.filename}`" class="link-card post-card div">
             <h3>{{ post.title }}</h3>
             <div class="meta">
                 <span>作者：{{ post.author }}</span> | 

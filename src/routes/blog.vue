@@ -6,7 +6,7 @@
             <div v-html="tocHtml"></div>
         </aside>
 
-        <main fadeUp="true">
+        <main fadeUp="true" class="div">
             <h1>{{ route.params.title }}</h1>
             <div class="blog-meta" v-if="post">
                 <span class="meta-item">作者：{{ post.author }}，</span>
@@ -15,23 +15,24 @@
             </div>
             <div class="markdown-body" v-html="html"></div>
             <div class="comments-container">
-                <Giscus
-                    repo="HosinoEJ/HosinoNeko-Blog"
-                    repoId="R_kgDOSKjMXg"
-                    category="message"
-                    categoryId="DIC_kwDOSKjMXs4C-AfD"
-                    mapping="title"
-                    strict="1"
-                    reactionsEnabled="1"
-                    emitMetadata="1"
-                    inputPosition="top"
-                    theme="preferred_color_scheme"
-                    lang="zh-TW"
-                    loading="lazy"
-                />
+                
             </div>
         </main>
     </div>
+    <Giscus
+        repo="HosinoEJ/HosinoNeko-Blog"
+        repoId="R_kgDOSKjMXg"
+        category="message"
+        categoryId="DIC_kwDOSKjMXs4C-AfD"
+        mapping="title"
+        strict="1"
+        reactionsEnabled="1"
+        emitMetadata="1"
+        inputPosition="top"
+        theme="preferred_color_scheme"
+        lang="zh-TW"
+        loading="lazy"
+    />
 </template>
 
 <script setup>

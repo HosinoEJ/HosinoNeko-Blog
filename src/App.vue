@@ -34,7 +34,7 @@ onMounted(() => {
         <Headers />
         <Banne />
         <main class="content" :style="mainStyle" fadeUp="true">
-            <div class="left div"><router-view /></div>
+            <div class="left"><router-view /></div>
             <statusForRt />
         </main>
         <Foot />
