@@ -47,8 +47,12 @@ footer{
     vertical-align: middle;
     margin: 0 5px;
     transform: scale(1);
+    transition: transform 0.3s ease-in-out;
 }
-
+.footerLink img:hover{
+    transform: scale(1.4);
+    
+}
 @media (prefers-color-scheme: dark) {
     img:not(.my-head){
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
@@ -60,10 +64,6 @@ footer{
 .my-head{
     border-radius: 50%;
     height: 3.5em;
-}
-.footerLink img:hover{
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
 }
 
 .footerData{

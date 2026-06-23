@@ -26,7 +26,7 @@ onMounted(() => {
         <div class="div">
             <h2>PROJECTS</h2>
             <p>NO COVNERSION THERAPY</p>
-            <a href="https://victimsunion.org">官方網站</a> | <a href="/#/nct">地圖</a>
+            <a href="https://victimsunion.org">官方網站</a> | <a href="/nct">地圖</a>
         </div>
 
         <div class="div">

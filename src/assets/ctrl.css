@@ -16,7 +16,7 @@ a:hover {
   align-items: center;
   padding: 16px;
   text-decoration: none;
-  border-radius: 16px;
+  border-radius: var(--border-radius);
   transition: all 0.3s ease;
 }
 .link-card:hover {
@@ -35,8 +35,7 @@ a:hover {
 [button="1"] {
     background-color: #00000000;
     color: var(--color-link);
-    transition: background-color 0.4s ease;
-    transition: color 0.4s ease;
+    transition: all 0.4s ease;
 }
 [button="1"]:hover {
     background-color: var(--color-link);
@@ -45,12 +44,8 @@ a:hover {
 [button="2"] {
     background-color: var(--color-link);
     color: white;
-    transition: background-color 0.4s ease;
-    transition: color 0.4s ease;
-}
-[button="2"]:hover {
-    background-color: #00000000;
-    color: var(--color-link);
+    padding: 3px 20px;
+    transition: all 0.4s ease;
 }
 
 [fadeUp="true"] {

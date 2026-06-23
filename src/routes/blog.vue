@@ -6,6 +6,15 @@
             <div v-html="tocHtml"></div>
         </aside>
 
+        <transition name="fade" mode="out-in">
+            <aside class="toc-sidebar div toc-mobile" v-if="tocHtml && isMobile" fadeUp="true">
+                <button class="toc-mobile-switch" @click="toggleMobileTOC"><img src="/public/icon/menu.svg" style="width: 30px; height: 30px;" alt="Switch" /></button>
+                
+                    <div v-if="mobileTOC_open===true" class="toc-content" v-html="tocHtml"></div>
+                
+            </aside>
+        </transition>
+
         <main fadeUp="true" class="div">
             <h1>{{ route.params.title }}</h1>
             <div class="blog-meta" v-if="post">
@@ -134,6 +143,11 @@ onMounted(async () => {
 
 //onMounted(loadMarkdown);
 
+const mobileTOC_open = ref(false);
+const toggleMobileTOC = () => {
+    mobileTOC_open.value = !mobileTOC_open.value;
+};
+
 
 // 監聽路由變化
 watch(() => route.params.title, loadMarkdown)
@@ -178,5 +192,35 @@ h1{
     font-size: 0.9em;
     margin-bottom: 2em;
 }
+
+.toc-mobile-switch {
+    position: sticky;
+    top: 5px;
+    right: 20px;
+    z-index: 101;
+    color: white;
+    border-radius: var(--border-radius);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.toc-mobile {
+    position: sticky;
+    top: 120px;
+    width: 250px;
+    max-height: 300px;
+
+    z-index: 100;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
 
 </style>

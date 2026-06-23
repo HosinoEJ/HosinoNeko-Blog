@@ -7,6 +7,7 @@
     --color-link: #3498db;
     --color-meta: #7f8c8d;
     --card-bg: rgba(255, 255, 255, 0.527);
+    --border-radius: 30px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -45,9 +46,9 @@ hr{
 .div {
     background: var(--card-bg);
     padding: 20px;
-    border-radius: 16px;
+    border-radius: var(--border-radius);
     box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     margin: 20px;
     overflow: visible;
     transform: display 0.3s ease-out;

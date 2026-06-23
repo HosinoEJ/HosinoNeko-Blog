@@ -1,22 +1,44 @@
 <script setup>
 import { useDeviceType } from '../utils/isMobie';
+import { ref, onMounted, onUnmounted } from 'vue';
 const { isMobile, isTablet } = useDeviceType();
 
 //有機會給他嗎的改掉
 const openList = () => {
     const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
     menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     menu.style.animation = 'fadeIn 0.3s';
 };
-window.addEventListener('scroll', () => {
+
+const topheadrer = ref(true);
+
+const handleScroll = () => {
     const header = document.querySelector('header');
+    if (!header) return;
+
     if (window.scrollY === 0) {
         //header.style.backgroundColor = 'var(--card-bg)';
         header.classList.remove('div');
+        topheadrer.value = true;
     } else {
         //header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         header.classList.add('div');
+        topheadrer.value = false;
     }
+};
+
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
 });
 </script>
 <template>
@@ -27,7 +49,10 @@ window.addEventListener('scroll', () => {
             <span v-else>HosinoNeko</span>
         </a>
         <page v-if="!isMobile" fadeUp="true">
-            <a href="/">首頁</a>
+            <transition name="fade" mode="out-in">
+                <a v-if="topheadrer == true" href="/">首頁</a>
+                <a v-else href="#" @click.prevent="scrollToTop" button="1">回到頂部</a>
+            </transition>
             <a href="/friends">友情鏈接</a>
             <a href="/about">關於本站</a>
             <a href="/blog">文章</a>
@@ -83,5 +108,16 @@ header page a{
 .mobile-menu {
     display: none;
     flex-direction: column;
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
 }
 </style>
