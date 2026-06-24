@@ -24,7 +24,7 @@ onMounted(() => {
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
   }).addTo(map);
 
-  const api = 'https://nct.hosinoeiji.workers.dev/api/map-data?mapStyle=true';
+  const api = 'https://nct.hosinoeiji.workers.dev/api/map-data?mode=map';
 
   // 2. 获取数据
   fetch(api)
