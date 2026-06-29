@@ -1,6 +1,6 @@
 <template>
     <div class="blog-layout" @click="handleAnchorClick" :style="layoutStyle">
-        <aside class="toc-sidebar div" v-if="tocHtml && !isMobile" fadeUp="true">
+        <aside class="toc-sidebar div" v-if="tocHtml && (!isMobile && !isTablet)" fadeUp="true">
             <a href="/blog">←查看其它文章</a>
             <div class="toc-title"><h3>目錄</h3></div>
             <div v-html="tocHtml"></div>

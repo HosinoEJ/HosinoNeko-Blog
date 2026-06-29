@@ -9,7 +9,7 @@ import age18 from './components/18age.vue';
 
 import { ref, computed, onMounted } from 'vue';
 import { useDeviceType } from './utils/isMobie';
-const { isMobile, isTablet } = useDeviceType();
+const { isMobile, isTablet,isDesktop } = useDeviceType();
 
 const mainStyle = computed(() => ({
     flexDirection: (isMobile.value || isTablet.value) ? 'column' : 'row',
@@ -26,6 +26,7 @@ const checkDate = () => {
 };
 onMounted(() => {
     checkDate();
+    console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
 });
 </script>
 
