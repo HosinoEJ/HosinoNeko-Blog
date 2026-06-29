@@ -8,6 +8,7 @@ export function useDeviceType() {
     const width = window.innerWidth;
     isMobile.value = width < 768;
     isTablet.value = width >= 768 && width < 1024;
+    console.log('mobile',isMobile.value,'table',isTablet.value)
   };
 
   onMounted(() => {

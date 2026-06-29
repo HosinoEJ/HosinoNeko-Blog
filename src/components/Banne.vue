@@ -79,7 +79,8 @@ const checkBannerHeight = () => {
   const bannerEl = document.getElementById('banner');
   if (bannerEl) {
     if (route.fullPath !== '/') {
-      bannerEl.style.height = 'calc(50vh - 66px)';
+      //bannerEl.style.height = 'calc(50vh - 66px)';
+      bannerEl.style.display = 'none';
     } else {
       bannerEl.style.height = 'calc(100vh - 66px)'; // 回歸預設值
     }

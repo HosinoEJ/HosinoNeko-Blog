@@ -1,4 +1,6 @@
 <script setup>
+import { useDeviceType } from '../utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
 </script>
 
 <template>
@@ -29,7 +31,7 @@
         </div>
         <div class="right">
             <a href="/license">Apache2.0License</a>
-            <a href="https://notbyai.fyi/"><img src="/Not_ByAi/_SVG/Developed-By-Human-Not-By-AI-Badge-white.svg" /></a>
+            <a v-if="isTablet" href="https://notbyai.fyi/"><img src="/Not_ByAi/_SVG/Developed-By-Human-Not-By-AI-Badge-white.svg" /></a>
         </div>
     </div>
 </template>
