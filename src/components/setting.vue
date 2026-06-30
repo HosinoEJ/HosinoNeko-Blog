@@ -10,7 +10,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const toggleMenu = () => {
     const isOpen=document.getElementById('settingPage')
-    isOpen.style.opacity = isOpen.style.opacity == 1 ? 0 : 1;
+    const isHidden = isOpen.style.opacity == 0;
+
+    // 如果当前是隐藏的，就显示并开启交互；否则隐藏并禁用交互
+    isOpen.style.opacity = isHidden ? 1 : 0;
+    isOpen.style.pointerEvents = isHidden ? 'auto' : 'none';
 }
 
 onMounted(() => {
@@ -34,6 +38,7 @@ onUnmounted(() => {
     width: 50%;
     height: 50%;
     opacity: 0;
+    pointer-events: none;
 
     transition: all 0.4s ease;
 }
