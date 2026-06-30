@@ -1,8 +1,24 @@
 <template>
-    <div class="div settingPage" id="settingPage">
-        <button button="1" id="closeBtn" @click="toggleMenu">關閉</button>
-        设定功能在开发中，我有点困了
-        
+    <div class="settingPage div" id="settingPage">
+        <button id="closeBtn" button="2" @click="toggleMenu">關閉</button>
+        <div class="settingPanel">
+            <h2>個人化選項</h2>
+            <div class="settingGroup">
+                <label>Banner显示高度</label>
+                <div class="sizeButtons">
+                    <button button="2" @click="setBannerHeight('all')">Full Screen</button>
+                    <button button="2" @click="setBannerHeight('half')">Half Screen</button>
+                    <button button="2" @click="setBannerHeight('none')">None</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
     </div>
 </template>
 <script setup>
@@ -42,9 +58,45 @@ onUnmounted(() => {
 
     transition: all 0.4s ease;
 }
+.settingPanel{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+.settingPanel h2{
+    grid-column: 1 / -1;
+    margin: 0 0 16px;
+}
+.settingGroup{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+.settingGroup label{
+    flex: 0 0 auto;
+    min-width: 100px;
+    white-space: nowrap;
+}
+.settingGroup select,
+.settingGroup .sizeButtons,
+.settingGroup .toggleRow{
+    flex: 1 1 0;
+    min-width: 180px;
+}
+.sizeButtons,
+.toggleRow{
+    display: flex;
+    gap: 8px;
+}
+.sizeButtons button,
+.toggleRow button{
+    flex: 1 1 auto;
+}
 #closeBtn{
     position: fixed;
     right: 20px;
     top: 20px;
+    z-index: 10001;
 }
 </style>
