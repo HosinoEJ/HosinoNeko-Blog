@@ -1,29 +1,90 @@
 <script setup>
+import { useDeviceType } from '../utils/isMobie';
+import { ref, onMounted, onUnmounted } from 'vue';
+const { isMobile, isTablet } = useDeviceType();
+
+//有機會給他嗎的改掉
+const openList = () => {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    menu.style.animation = 'fadeIn 0.3s';
+};
+
+const topheadrer = ref(true);
+
+const handleScroll = () => {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    if (window.scrollY === 0) {
+        //header.style.backgroundColor = 'var(--card-bg)';
+        header.classList.remove('div');
+        topheadrer.value = true;
+    } else {
+        //header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+        header.classList.add('div');
+        topheadrer.value = false;
+    }
+};
+
+const openSettingMenu = () => {
+    // 抛出一个全局事件
+    window.dispatchEvent(new CustomEvent('toggle-setting-menu'));
+};
+
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 <template>
-    <header class="div">
-        <a href="/" class="icon">
+    <header>
+        <a href="/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
-            HosinoNeko | website
+            <span v-if="!isMobile">HosinoNeko | website</span>
+            <span v-else>HosinoNeko</span>
         </a>
-        <page>
-            <a href="#/">首頁</a>
-            <a href="#/friends">友情鏈接</a>
-            <a href="#/about">關於本站</a>
-            <a href="#/blog">文章</a>
+        <page v-if="!isMobile" fadeUp="true">
+            <transition name="fade" mode="out-in">
+                <a v-if="topheadrer == true" href="/">首頁</a>
+                <a v-else href="#" @click.prevent="scrollToTop" button="1">回到頂部</a>
+            </transition>
+            <a href="/friends">友情鏈接</a>
+            <a href="/about">關於本站</a>
+            <a href="/blog">文章</a>
+            <a @click="openSettingMenu">個人化</a>
         </page>
-        <div class="rtmod">
-            <button onclick="settingDivOpen()" id="settingBtn" button="2">settings</button>
+        <div class="rtmod" v-else fadeUp="true">
+            <button @click="openList" id="openListBtn" button="2">……</button>
         </div>
     </header>
+    <div class="div mobile-menu" id="mobileMenu" v-if="!isTablet">
+        <a href="/">首頁</a>
+        <a href="/friends">友情鏈接</a>
+        <a href="/about">關於本站</a>
+        <a href="/blog">文章</a>
+    </div>
 </template>
 <style scoped>
 header{
     padding: 1em 2em;
     font-size: 18px;
+    z-index: 100;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 1em;
+    transition: all 0.5s ease;
 }
 header > * {
     margin: 0 1em;
@@ -31,20 +92,38 @@ header > * {
 header img {
     height: 1.5em;
     width: auto;
+    margin-right: 0.5em;
     vertical-align: middle;
     border-radius: 50%;
 }
 header .icon {
-    margin-right: auto;
+    /*margin-right: auto;*/
     text-decoration: none;
 }
 header .rtmod{
     margin-left: auto;
 }
+/*
 header > :not(.icon,.rtmod){
     position:absolute
 }
+    */
 header page a{
     margin: 0 20px;
+}
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
 }
 </style>

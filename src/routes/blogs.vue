@@ -1,6 +1,6 @@
 <template>
-  <div class="blog-container">
-    <nav class="tag-filter">
+  <div class="blog-container" fadeUp="true">
+    <nav class="tag-filter div">
         <button
             @click="filterByTag(null)" 
             :button="currentTag == id ? '2' : '1'"
@@ -17,10 +17,8 @@
         </button>
     </nav>
 
-    <hr />
-
     <main class="post-list">
-        <router-link v-for="post in filteredPosts" :key="post.filename" :to="`/blog/${post.filename}`" class="post-card">
+        <router-link v-for="post in filteredPosts" :key="post.filename" :to="`/blog/${post.filename}`" class="link-card post-card div">
             <h3>{{ post.title }}</h3>
             <div class="meta">
                 <span>作者：{{ post.author }}</span> | 
@@ -51,6 +49,7 @@ const blogData = ref({ TagList: {}, Data: [] });
 
 onMounted(async () => {
     blogData.value = await fetchBlogData();
+    document.title = '全部文章'
 });
 
 // 使用 computed 自動處理篩選，對應原本的 QTag 邏輯
@@ -71,4 +70,8 @@ const allTags = computed(() => blogData.value.TagList);
 </script>
 
 <style scoped>
+.post-card {
+    display: block;
+    padding: 15px;
+}
 </style>
