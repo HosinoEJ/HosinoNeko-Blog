@@ -28,6 +28,11 @@ const handleScroll = () => {
     }
 };
 
+const openSettingMenu = () => {
+    // 抛出一个全局事件
+    window.dispatchEvent(new CustomEvent('toggle-setting-menu'));
+};
+
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -56,6 +61,7 @@ onUnmounted(() => {
             <a href="/friends">友情鏈接</a>
             <a href="/about">關於本站</a>
             <a href="/blog">文章</a>
+            <a @click="openSettingMenu">設定</a>
         </page>
         <div class="rtmod" v-else fadeUp="true">
             <button @click="openList" id="openListBtn" button="2">……</button>

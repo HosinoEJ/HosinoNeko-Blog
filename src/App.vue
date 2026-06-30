@@ -6,6 +6,7 @@ import Foot from './components/Footer.vue'
 import statusForRt from './components/statusForRt.vue'
 import Banne from './components/Banne.vue';
 import age18 from './components/18age.vue';
+import setting from './components/setting.vue';
 
 import { ref, computed, onMounted } from 'vue';
 import { useDeviceType } from './utils/isMobie';
@@ -32,6 +33,7 @@ onMounted(() => {
 
 <template>
     <div v-if="!isAdultDay">
+        <setting />
         <Headers />
         <Banne />
         <main class="content" :style="mainStyle" fadeUp="true">
