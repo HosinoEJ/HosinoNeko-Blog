@@ -1,7 +1,7 @@
 import './assets/main.css'
 import './assets/ctrl.css'
 
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -12,6 +12,7 @@ import NotFound from './routes/404.vue'
 import license from './routes/license.vue'
 import blogs from './routes/blogs.vue'
 import blog from './routes/blog.vue'
+import nct from './routes/nct.vue'
 
 const app = createApp(App)
 
@@ -21,18 +22,21 @@ app.config.globalProperties.$HeadImageX64px = 'https://avatars.githubusercontent
 
 //路由表
 const routes = [
-  { path: '/', component: Home },
-  { path: '/friends', component: Friends },
-  { path: '/license', component: license },
-  { path: '/blog', component: blogs },
-  { path: '/blog/:title', component: blog },
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
+    { path: '/', component: Home },
+    { path: '/friends', component: Friends },
+    { path: '/license', component: license },
+    { path: '/blog', component: blogs },
+    { path: '/blog/:title', component: blog },
+    { path: '/nct', component: nct },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(), // 使用 Hash 模式，對應你原本的邏輯
-  routes,
+    history: createWebHistory(),
+    routes,
 })
 
 app.use(router)//注冊路由
 app.mount('#app')
+
+console.info('你試試點擊五下副標題呢喵？')

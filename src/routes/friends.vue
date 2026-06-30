@@ -1,5 +1,5 @@
 <template>
-  <div class="friends-page">
+  <div class="friends-page" fadeUp="true">
     <main class="main">
       <div class="container">
         <div class="header">
@@ -7,13 +7,13 @@
           <p>歡迎所有星野醬的好朋友喵（後宮）</p>
         </div>
 
-        <div class="links-grid">
+        <div class="links-grid div">
           <a 
             v-for="friend in friendsData.friends" 
             :key="friend.url" 
             :href="friend.url" 
             target="_blank" 
-            class="link-card DivStyle-Glass"
+            class="link-card"
           >
             <img 
               :src="friend.avatar" 
@@ -35,6 +35,7 @@
         </div>
 
         <div class="apply-section">
+          <div class="div">
             <h2>申請交換友鏈</h2>
             <p><strong>如果你也想交換鏈接。請在你的網站添加本站後，通過<a href="mailto:hosinoeiji@gmail.com">郵件</a>告訴我：</strong></p>
             <ul>
@@ -43,11 +44,13 @@
                 <li><strong>描述：</strong> 一句話介紹你的網站</li>
                 <li><strong>頭像：</strong> 公網可訪問的圖片鏈接</li>
                 <li>
-                    <strong>大頭照顏色</strong> 可以是顏色英文名，或者十六進制顏色代碼。例：#3388bb<br>
+                    <strong>大頭照顏色</strong> 可以是顏色英文名，或者十六進制顏色代碼。例：<span style="color: white; background-color: #3388bb;">#3388bb</span><br>
                     <img src="https://avatars.githubusercontent.com/u/177436503?v=4" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; border: 2px solid #3388bb;">
                 </li>
             </ul>
+          </div>
 
+          <div class="div">
             <p><strong>如果想將本站加到您的網站友鏈的話，請將下面資訊加入您的友鏈頁面：</strong></p>
             <ul>
                 <li><strong>名稱：</strong> Website of HosinoNeko</li>
@@ -56,6 +59,7 @@
                 <li><strong>頭像：</strong> <a src="https://avatars.githubusercontent.com/u/177436503?v=4">https://avatars.githubusercontent.com/u/177436503?v=4</a><br>
                 <img src="https://avatars.githubusercontent.com/u/177436503?v=4" width="50px" style="border-radius: 50%;"/></li>
             </ul>
+          </div>
         </div>
       </div>
     </main>
@@ -81,6 +85,7 @@ const loadFriends = async () => {
 
 onMounted(() => {
   loadFriends();
+  document.title = '星野的朋友們'
 });
 </script>
 
@@ -98,22 +103,6 @@ onMounted(() => {
   gap: 20px;
 }
 
-/* 卡片基礎樣式 */
-.link-card {
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  text-decoration: none;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.9);
-}
 
 /* 頭像樣式 */
 .friend-avatar {

@@ -1,21 +1,52 @@
 <template>
-    <div class="blog-layout" @click="handleAnchorClick">
-        <aside class="toc-sidebar div" v-if="tocHtml">
-            <a href="/#/blog">←查看其它文章</a>
+    <div class="blog-layout" @click="handleAnchorClick" :style="layoutStyle">
+        <aside class="toc-sidebar div" v-if="tocHtml && (!isMobile && !isTablet)" fadeUp="true">
+            <a href="/blog">←查看其它文章</a>
             <div class="toc-title"><h3>目錄</h3></div>
             <div v-html="tocHtml"></div>
         </aside>
 
-        <main>
-        <h1>{{ route.params.title }}</h1>
-        <div class="blog-meta"></div>
-        <div class="markdown-body" v-html="html"></div>
+        <transition name="fade" mode="out-in">
+            <aside class="toc-sidebar div toc-mobile" v-if="tocHtml && isMobile" fadeUp="true">
+                <button class="toc-mobile-switch" @click="toggleMobileTOC"><img src="/public/icon/menu.svg" style="width: 30px; height: 30px;" alt="Switch" /></button>
+                
+                    <div v-if="mobileTOC_open===true" class="toc-content" v-html="tocHtml"></div>
+                
+            </aside>
+        </transition>
+
+        <main fadeUp="true" class="div">
+            <h1>{{ route.params.title }}</h1>
+            <div class="blog-meta" v-if="post">
+                <span class="meta-item">作者：{{ post.author }}，</span>
+                <span class="meta-item">發布時間：{{ post.CreationDate }}，</span>
+                <span class="meta-item">語言：{{ post.Language }}</span>
+            </div>
+            <div class="markdown-body" v-html="html"></div>
+            <div class="comments-container">
+                
+            </div>
         </main>
     </div>
+    <Giscus
+        repo="HosinoEJ/HosinoNeko-Blog"
+        repoId="R_kgDOSKjMXg"
+        category="message"
+        categoryId="DIC_kwDOSKjMXs4C-AfD"
+        mapping="title"
+        strict="1"
+        reactionsEnabled="1"
+        emitMetadata="1"
+        inputPosition="top"
+        theme="preferred_color_scheme"
+        lang="zh-TW"
+        loading="lazy"
+    />
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import Giscus from '@giscus/vue';
+import { ref, onMounted, watch , computed } from 'vue'
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import '../assets/github-markdown-css/github-markdown.css'
@@ -23,6 +54,12 @@ import anchor from 'markdown-it-anchor';
 import toc from 'markdown-it-toc-done-right';
 import { fetchBlogData, getPostByFilename } from '../utils/blogData.js';
 
+import { useDeviceType } from '../utils/isMobie';
+const { isMobile, isTablet } = useDeviceType();
+
+const layoutStyle = computed(() => ({
+    display: (isMobile.value || isTablet.value) ? 'block' : 'flex',
+}));
 
 const route = useRoute()
 const html = ref('')
@@ -93,6 +130,7 @@ onMounted(async () => {
     const data = await fetchBlogData();
     const filename = route.params.title;
     const foundPost = getPostByFilename(data, filename);
+    document.title = filename;
     
     if (foundPost) {
         post.value = foundPost;
@@ -105,32 +143,37 @@ onMounted(async () => {
 
 //onMounted(loadMarkdown);
 
+const mobileTOC_open = ref(false);
+const toggleMobileTOC = () => {
+    mobileTOC_open.value = !mobileTOC_open.value;
+};
+
 
 // 監聽路由變化
 watch(() => route.params.title, loadMarkdown)
 </script>
 <style scoped>
 h1{
-    width: 80%;
     margin: 0 auto;
 }
 
 .toc-sidebar {
   position: sticky;
-  top: 40px;
+  top: 120px;
   width: 250px;
   flex-shrink: 0;  /* 防止目錄被文章擠扁 */
-  max-height: calc(100vh - 80px); /* 限制高度，防止超過視窗 */
+  max-height: calc(100vh - 180px); /* 限制高度，防止超過視窗 */
   overflow-y: auto;
   padding-left: 20px;
 }
 .blog-layout {
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1200px;
+  /*max-width: 1200px; */
   margin: 0 auto;
   padding: 20px;
 }
@@ -149,5 +192,35 @@ h1{
     font-size: 0.9em;
     margin-bottom: 2em;
 }
+
+.toc-mobile-switch {
+    position: sticky;
+    top: 5px;
+    right: 20px;
+    z-index: 101;
+    color: white;
+    border-radius: var(--border-radius);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.toc-mobile {
+    position: sticky;
+    top: 120px;
+    width: 250px;
+    max-height: 300px;
+
+    z-index: 100;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
 
 </style>

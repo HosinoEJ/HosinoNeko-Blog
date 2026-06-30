@@ -10,6 +10,21 @@ a:hover {
     text-decoration: underline;
 }
 
+/* 卡片基礎樣式 */
+.link-card {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+}
+
 [button] {
     border-radius: 1em;
     margin: 2px;
@@ -20,8 +35,7 @@ a:hover {
 [button="1"] {
     background-color: #00000000;
     color: var(--color-link);
-    transition: background-color 0.4s ease;
-    transition: color 0.4s ease;
+    transition: all 0.4s ease;
 }
 [button="1"]:hover {
     background-color: var(--color-link);
@@ -30,10 +44,20 @@ a:hover {
 [button="2"] {
     background-color: var(--color-link);
     color: white;
-    transition: background-color 0.4s ease;
-    transition: color 0.4s ease;
+    padding: 3px 20px;
+    transition: all 0.4s ease;
 }
-[button="2"]:hover {
-    background-color: #00000000;
-    color: var(--color-link);
+
+[fadeUp="true"] {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
