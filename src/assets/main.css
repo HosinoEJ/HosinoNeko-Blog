@@ -1,22 +1,21 @@
-
-
 :root {
-    --bg-main: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --color-title: #2c3e50;
-    --color-text: #34495e;
-    --color-link: #3498db;
-    --color-meta: #7f8c8d;
-    --card-bg: rgba(255, 255, 255, 0.527);
-    --border-radius: 30px;
+    --bg-main: linear-gradient(135deg, #08090c 0%, #141822 100%);
+    --color-title: #ffffff;
+    --color-text: #cbd5e1;
+    --color-link: #93c5fd;
+    --color-meta: #64748b;
+    --card-bg: rgba(15, 17, 23, 0.75);
+    --border-radius: 4px; /* 保留或微调边框圆角，契合克制美学 */
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-main: linear-gradient(135deg, #1a1c2c 0%, #4a596a 100%);
-    --color-title: #eceff4;
-    --color-text: #d8dee9;
-    --color-link: #5eb5f7;
-    --color-meta: #9ca3af;
-    --card-bg: rgba(0, 0, 0, 0.35);
+    --bg-main: linear-gradient(135deg, #050608 0%, #0d1017 100%);
+    --color-title: #ffffff;
+    --color-text: #cbd5e1;
+    --color-link: #93c5fd;
+    --color-meta: #64748b;
+    --card-bg: rgba(10, 12, 17, 0.85);
   }
 }
 
@@ -26,28 +25,30 @@ body {
     background: var(--bg-main);
     background-attachment: fixed; /* 滾動時背景不動，更有層次感 */
     color: var(--color-text);
-    line-height: 1.8; /* 網誌最重要的屬性：行高 */
-    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.9; /* 延续克制版面的舒适行高 */
+    font-family: '宋体', 'SimSun', "PingFang TC", "Microsoft JhengHei", serif; /* 融入人文宋体质感 */
 }
 
 h1 {
     color: var(--color-title);
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
+    font-size: 3em;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 hr{
-    border: none;
-    border-top: 1px solid var(--color-meta);
-    margin: 2em 0;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #334155, rgba(0,0,0,0)); /* 替换为温润的渐变虚线色 */
+    margin: 25px 0;
 }
 
 .div {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 35px 40px;
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
+    box-shadow: none; /* 去除过度现代化的重阴影，改用细腻的虚线或极简边框 */
+    border: 1px dashed #334155; /* 融入诗歌卡片的虚线防御边界哲学 */
     backdrop-filter: blur(10px);
     margin: 20px;
     overflow: visible;

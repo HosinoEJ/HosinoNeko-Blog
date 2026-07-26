@@ -5,7 +5,7 @@ a {
     transition: color 0.3s ease;
 }
 a:hover {
-    color: #2980b9;
+    color: #fca5a5; /* 呼应求救微光的柔和粉红色 */
     text-decoration: underline;
 }
 
@@ -20,15 +20,17 @@ a:hover {
 }
 .link-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-  background: var(--card-bg);
+  box-shadow: none; /* 去除现代浓重阴影，保持克制 */
+  background: rgba(30, 41, 59, 0.4); /* 悬停时微微泛起暗色涟漪 */
+  border: 1px dashed #64748b;
 }
 
 /* 按钮样式 */
 [button] {
-    border-radius: 1em;
+    font-family: inherit;
+    border-radius: 4px; /* 修正为符合整站克制美学的直角/小圆角 */
     margin: 2px;
-    font-size: 17px;
+    font-size: 15px;
     border: 0 solid #ffffff;
     padding: 3px;
 }
@@ -40,14 +42,19 @@ a:hover {
 }
 [button="1"]:hover {
     background-color: var(--color-link);
-    color: white;
+    color: #08090c;
 }
 /* 按钮2样式 */
 [button="2"] {
-    background-color: var(--color-link);
-    color: white;
-    padding: 3px 20px;
-    transition: all 0.4s ease;
+    background-color: transparent;
+    color: #fca5a5;
+    border: 1px solid #fca5a5; /* 对应救援按钮的描边哲学 */
+    padding: 5px 25px;
+    transition: all 0.3s;
+}
+[button="2"]:hover {
+    background-color: #fca5a5;
+    color: #08090c;
 }
 
 /* 淡入上滑动画 */

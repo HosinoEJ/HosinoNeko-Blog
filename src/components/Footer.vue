@@ -40,6 +40,9 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--color-meta);
+    letter-spacing: 1px;
+    padding: 40px 20px 20px 20px;
 }
 .footerLink > *{
     margin: 0 10px;
@@ -52,32 +55,46 @@ footer{
     transition: transform 0.3s ease-in-out;
 }
 .footerLink img:hover{
-    transform: scale(1.4);
-    
+    transform: scale(1.3);
 }
+
+/* 适配深邃夜色背景的图标反色方案 */
 @media (prefers-color-scheme: dark) {
     img:not(.my-head){
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        filter: invert(85%) sepia(10%) saturate(200%) hue-rotate(180deg) brightness(90%) contrast(90%);
     }
 }
+img:not(.my-head) {
+    filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg) brightness(80%) contrast(90%);
+    transition: filter 0.3s ease;
+}
+img:not(.my-head):hover {
+    filter: invert(80%) sepia(20%) saturate(500%) hue-rotate(180deg) brightness(100%) contrast(100%);
+}
+
 .footerLink img:not(.my-head){
     height: 2em;
 }
 .my-head{
     border-radius: 50%;
     height: 3.5em;
+    border: 1px dashed var(--color-meta); /* 融入克制的虚线边框哲学 */
 }
 
 .footerData{
-    background-color: #0000000a;
-    padding: 20px;
+    background-color: rgba(15, 17, 23, 0.4); /* 呼应卡片背景的暗色半透明质感 */
+    border-top: 1px dashed rgba(51, 65, 85, 0.5);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    color: var(--color-meta);
+    font-size: 14px;
 }
 .footerMade{
     text-align: center;
+    color: var(--color-meta);
 }
 .footerMade *{
     margin: 5px;
