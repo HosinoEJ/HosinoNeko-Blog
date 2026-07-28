@@ -3,15 +3,6 @@
 当然我肯定不会在这里放上我的网址啦，如果你想要加入的话，那请联络我。当然，前提是我们认识才行qwq  
 话是这么说，你还是能看看我们的地图的qwq  
 [e.rainplay.cn:37131](http://e.rainplay.cn:37131)
-<iframe 
-  src="http://e.rainplay.cn:37131" 
-  width="100%" 
-  height="500" 
-  title="Maps"
-  frameborder="0"
-  loading="lazy"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
 
 至于这个文章是干嘛的，其实不重要，我是想做成信息资讯之类的东西。
 
