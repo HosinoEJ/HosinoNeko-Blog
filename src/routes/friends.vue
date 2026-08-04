@@ -23,7 +23,7 @@
             >
             
             <div class="info">
-              <h3 :style="{ color: friend.color || '#111827' }">
+              <h3 style="color: '#111827'">
                 {{ friend.name }}
               </h3>
               
