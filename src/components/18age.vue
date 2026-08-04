@@ -119,13 +119,13 @@ const timelineData = [
 
 <style scoped>
 
-:global(*) {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-:global(body) {
+body {
   background: #08090d;
 }
 
