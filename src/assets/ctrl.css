@@ -1,5 +1,4 @@
-
-
+/* link基础样式 */
 a {
     color: var(--color-link);
     text-decoration: none;
@@ -25,6 +24,7 @@ a:hover {
   background: var(--card-bg);
 }
 
+/* 按钮样式 */
 [button] {
     border-radius: 1em;
     margin: 2px;
@@ -32,6 +32,7 @@ a:hover {
     border: 0 solid #ffffff;
     padding: 3px;
 }
+/* 按钮1样式，在排版中处于第一个按钮，或者给按钮突出显示时 */
 [button="1"] {
     background-color: #00000000;
     color: var(--color-link);
@@ -41,6 +42,7 @@ a:hover {
     background-color: var(--color-link);
     color: white;
 }
+/* 按钮2样式 */
 [button="2"] {
     background-color: var(--color-link);
     color: white;
@@ -48,6 +50,7 @@ a:hover {
     transition: all 0.4s ease;
 }
 
+/* 淡入上滑动画 */
 [fadeUp="true"] {
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }

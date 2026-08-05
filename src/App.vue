@@ -32,6 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
+    <button v-if="isAdultDay" button="1" style="z-index: 1000;" @click="isAdultDay = false">点击恢复原来的页面</button>
     <div v-if="!isAdultDay">
         <setting />
         <Headers />
