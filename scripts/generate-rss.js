@@ -55,7 +55,7 @@ formattedPosts.sort((a, b) => b.parsedDate - a.parsedDate);
 // 4. 將文章循環加入 RSS Feed
 formattedPosts.forEach((post) => {
   // 根據你的 Vue 路由設計拼接文章 URL。此處以 /posts/filename 為例
-  const postUrl = `${BLOG_URL}/#/blog/${encodeURIComponent(post.filename)}`;
+  const postUrl = `${BLOG_URL}/blog/${encodeURIComponent(post.filename)}`;
   
   // 獲取標籤名稱
   const categories = (post.tagid || []).map(id => tagList[id]).filter(Boolean);

@@ -74,4 +74,8 @@ const allTags = computed(() => blogData.value.TagList);
     display: block;
     padding: 15px;
 }
+.post-list {
+    display: flex;
+    flex-direction: column-reverse;
+}
 </style>
