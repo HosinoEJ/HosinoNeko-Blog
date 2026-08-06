@@ -27,7 +27,7 @@ const checkDate = () => {
 };
 onMounted(() => {
     checkDate();
-    console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
+    //console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
 });
 </script>
 

@@ -10,7 +10,7 @@ export function useDeviceType() {
     isMobile.value = width < 768;
     isTablet.value = width >= 768 && width < 1024;
     isDesktop.value = width>=1024;
-    console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
+    //console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
   };
 
   onMounted(() => {
