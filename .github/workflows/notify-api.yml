@@ -8,12 +8,10 @@ on:
     # 這個路徑下的檔案變動時，觸發 Workflow
     paths:
       - 'Blog/**'
-      - 'Public/blogData.json'
   workflow_dispatch:
 
 env:
   TARGET_DIR: "Blog/"
-  TARGET_JSON: "Public/blogData.json"
   WEBHOOK_URL: "https://hosino-neko-sub-send.vercel.app"
 
 jobs:
@@ -30,7 +28,7 @@ jobs:
         run: |
           git config core.quotepath false
           # tr '\n' ',' 是將換行轉為逗號，方便 API 處理
-          ADDED=$(git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_JSON" | tr '\n' ',' | sed 's/,$//')
+          ADDED=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_DIR" | tr '\n' ',' | sed 's/,$//')
           MODIFIED=$(git diff --name-only --diff-filter=M ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_DIR" | tr '\n' ',' | sed 's/,$//')
           
           echo "added=$ADDED" >> $GITHUB_OUTPUT
