@@ -1,7 +1,7 @@
 <script setup>
 import { useDeviceType } from '../utils/isMobie';
 const { isMobile, isTablet } = useDeviceType();
-import { ref, onUnmounted, watch, onMounted } from 'vue';
+import { ref, onUnmounted, watch, onMounted, computed } from 'vue';
 import MidiPlayer from 'midi-player-js';
 import Soundfont from 'soundfont-player';
 import { useRoute } from 'vue-router';
@@ -87,8 +87,34 @@ const checkBannerHeight = () => {
   }
 };
 
+
+// 功能：轮换副标题，从/public/subtitle.json中获取文字json，每过10秒轮换到下一个array
+const subtitleIndex = ref(0);
+const subitles = ref([]);
+const currentSubtitle = computed(() => subitles.value[subtitleIndex.value] || '');
+
+const loadSubtitles = async () => {
+  try {
+    const response = await fetch('/subtitle.json');
+    const data = await response.json();
+    subitles.value = data;
+  } catch (error) {
+    console.error('Error loading subtitles:', error);
+  }
+};
+
+const rotateSubtitle = () => {
+  if (subitles.value.length > 0) {
+    subtitleIndex.value = (subtitleIndex.value + 1) % subitles.value.length;
+    //console.log('序号:', subtitleIndex.value, '内容:', subitles.value[subtitleIndex.value]);
+  }
+};
+
+
 onMounted(() => {
-  checkBannerHeight();
+  checkBannerHeight();// 首次檢查 banner 高度
+  loadSubtitles();// 載入字幕
+  setInterval(rotateSubtitle, 10000);// 每10秒轮换一次副标题
 });
 
 // 組件卸載時務必釋放記憶體
@@ -106,14 +132,16 @@ watch(() => route.fullPath, () => {
 
 </script>
 <template>
-    <banner id="banner" fadeUp="true">
-        <h1>Welcome to Website of HosinoNeko</h1>
+    <banner id="banner">
+        <h1 fadeUp="true">Welcome to Website of HosinoNeko</h1>
 
         <h2
+        :key="subtitleIndex"
         class="click-box" 
         @click="handleDivClick"
         :class="{ 'playing': playerState === '播放中' }"
-        >點解我眼角長期都帶住淚？因為我一直被困喺一個暗無天日嘅十月入面</h2>
+        fadeUp="true"
+        >{{ currentSubtitle }}</h2>
     </banner>
 </template>
 <style scoped>
@@ -125,6 +153,11 @@ banner{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+banner [fadeUp="true"] {
+    animation-duration: 0.5s;
+    animation-delay: 0s;
 }
 
 .c-g { color: #5bcffa; }
