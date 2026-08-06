@@ -14,7 +14,7 @@ const openList = () => {
 const topheadrer = ref(true);
 
 const handleScroll = () => {
-    const header = document.querySelector('header');
+    const header = document.querySelector('.header');
     if (!header) return;
 
     if (window.scrollY === 0) {
@@ -47,7 +47,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-    <header>
+    <div class="header">
         <a href="/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
             <span v-if="!isMobile">HosinoNeko | website</span>
@@ -64,9 +64,9 @@ onUnmounted(() => {
             <a @click="openSettingMenu">個人化</a>
         </page>
         <div class="rtmod" v-else fadeUp="true">
-            <button @click="openList" id="openListBtn" button="2">……</button>
+            <button @click="openList" id="openListBtn" button="2">...</button>
         </div>
-    </header>
+    </div>
     <div class="div mobile-menu" id="mobileMenu" v-if="!isTablet">
         <a href="/">首頁</a>
         <a href="/friends">友情鏈接</a>
@@ -75,7 +75,7 @@ onUnmounted(() => {
     </div>
 </template>
 <style scoped>
-header{
+.header{
     padding: 1em 2em;
     font-size: 18px;
     z-index: 100;
@@ -86,29 +86,29 @@ header{
     top: 1em;
     transition: all 0.5s ease;
 }
-header > * {
+.header > * {
     margin: 0 1em;
 }
-header img {
+.header img {
     height: 1.5em;
     width: auto;
     margin-right: 0.5em;
     vertical-align: middle;
     border-radius: 50%;
 }
-header .icon {
+.header .icon {
     /*margin-right: auto;*/
     text-decoration: none;
 }
-header .rtmod{
+.header .rtmod{
     margin-left: auto;
 }
 /*
-header > :not(.icon,.rtmod){
+.header > :not(.icon,.rtmod){
     position:absolute
 }
     */
-header page a{
+.header page a{
     margin: 0 20px;
 }
 .mobile-menu {

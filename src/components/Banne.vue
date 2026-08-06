@@ -132,7 +132,7 @@ watch(() => route.fullPath, () => {
 
 </script>
 <template>
-    <banner id="banner">
+    <div id="banner">
         <h1 fadeUp="true">Welcome to Website of HosinoNeko</h1>
 
         <h2
@@ -142,10 +142,10 @@ watch(() => route.fullPath, () => {
         :class="{ 'playing': playerState === '播放中' }"
         fadeUp="true"
         >{{ currentSubtitle }}</h2>
-    </banner>
+    </div>
 </template>
 <style scoped>
-banner{
+#banner{
     height: calc(100vh - 66px);
     margin:  0 10%;
     display: flex;
@@ -155,7 +155,7 @@ banner{
     flex-direction: column;
 }
 
-banner [fadeUp="true"] {
+#banner [fadeUp="true"] {
     animation-duration: 0.5s;
     animation-delay: 0s;
 }
