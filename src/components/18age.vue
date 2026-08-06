@@ -5,15 +5,28 @@
     
 
     <headers class="hero">
-      <h1 class="title">
-        HosinoNeko
-        <br>
-        Level 18: Becoming<span>.</span>
-      </h1>
+      <div class="title_box">
+        <h1 class="title">
+          HosinoNeko
+          <br>
+          Level 18: Becoming<span>.</span>
+        </h1>
 
-      <p class="subtitle">
-        無言ではなく、存在するための声
-      </p>
+        <p class="subtitle">
+          無言ではなく、存在するための声
+        </p>
+      </div>
+
+      <div style="display: flex;justify-content: center; margin: 10vh auto ;">
+        <iframe data-testid="embed-iframe" style="border-radius:12px;"
+       src="https://open.spotify.com/embed/track/0MoavTKhn3DN1PBy3zfj0M?utm_source=generator&si=17f6a195229148b0"
+        width="50%"
+         height="152"
+          frameBorder="0"
+           allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+             loading="lazy"></iframe>
+      </div>
     </headers>
 
     <main class="timeline">
@@ -162,7 +175,7 @@ body {
   min-height:100vh;
 
   padding:
-    clamp(3rem,8vw,7rem)
+    clamp(0,8vw,7rem)
     clamp(1rem,5vw,3rem);
 
 
@@ -236,10 +249,14 @@ body {
 
 }
 
-
-
+.title_box{
+  height:100vh;
+  display: flex;
+      flex-direction: column;
+    justify-content: center;
+}
 .title {
-
+  
 
   font-size:
     clamp(2.8rem,7vw,5rem);
@@ -266,7 +283,9 @@ body {
 
   background-size:200%;
 
-
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
   -webkit-background-clip:text;
 
   color:transparent;
@@ -665,7 +684,7 @@ body {
 .footer {
 
 
-  margin-top:10rem;
+  margin:50vh auto;
 
 
   text-align:center;
@@ -675,7 +694,6 @@ body {
 
   z-index:2;
 
-  height:83vh;
 
 
   color:var(--text-soft);
