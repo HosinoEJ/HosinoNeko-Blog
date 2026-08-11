@@ -34,6 +34,13 @@
       "name": "Neko歌姬计划",
       "desc": "站长的杯子",
       "url": "https://music.cnmsb.xin/"
+    },
+    {
+      "avatar": "https://chiyu.it/images/logo/logo.webp",
+      "color":"#3388bb",
+      "name": "池魚小栈",
+      "desc": "跨过晨昏线，便是永夜。",
+      "url": "https://chiyu.it/"
     }
   ]
 }
