@@ -99,7 +99,7 @@ let blurbs = subtitle,
 
 const nextText = () => {
   curIndex = (curIndex + 1) % blurbs.length;
-  gsap.to(".text", {
+  gsap.to(".h2", {
     scrambleText: {
       text: blurbs[curIndex],
       chars: "upperAndLowerCase",
@@ -137,7 +137,7 @@ watch(() => route.fullPath, () => {
         <h1 fadeUp="true">Welcome to Website of HosinoNeko</h1>
 
         <h2
-        class="click-box text" 
+        class="click-box h2" 
         @click="handleDivClick"
         :class="{ 'playing': playerState === '播放中' }"
         fadeUp="true"
