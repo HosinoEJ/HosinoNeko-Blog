@@ -6,6 +6,10 @@ import MidiPlayer from 'midi-player-js';
 import Soundfont from 'soundfont-player';
 import { useRoute } from 'vue-router';
 
+import { gsap } from 'gsap'
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
+
+gsap.registerPlugin(ScrambleTextPlugin)
 
 const clickCount = ref(0);
 const playerState = ref('未播放');
@@ -88,33 +92,30 @@ const checkBannerHeight = () => {
 };
 
 
-// 功能：轮换副标题，从/public/subtitle.json中获取文字json，每过10秒轮换到下一个array
-const subtitleIndex = ref(0);
-const subitles = ref([]);
-const currentSubtitle = computed(() => subitles.value[subtitleIndex.value] || '');
+import subtitle from '@/data/subtitle.json';
+let blurbs = subtitle,
+  curIndex = 0;
 
-const loadSubtitles = async () => {
-  try {
-    const response = await fetch('/subtitle.json');
-    const data = await response.json();
-    subitles.value = data;
-  } catch (error) {
-    console.error('Error loading subtitles:', error);
-  }
+
+const nextText = () => {
+  curIndex = (curIndex + 1) % blurbs.length;
+  gsap.to(".text", {
+    scrambleText: {
+      text: blurbs[curIndex],
+      chars: "upperAndLowerCase",
+      revealDelay: 0.2,
+      tweenLength: true,
+      newClass: curIndex == 2 ? "border" : ""
+    },
+    ease: "power2.inOut",
+    overwrite: "auto",
+    duration: 4.2
+  });
 };
-
-const rotateSubtitle = () => {
-  if (subitles.value.length > 0) {
-    subtitleIndex.value = (subtitleIndex.value + 1) % subitles.value.length;
-    //console.log('序号:', subtitleIndex.value, '内容:', subitles.value[subtitleIndex.value]);
-  }
-};
-
 
 onMounted(() => {
   checkBannerHeight();// 首次檢查 banner 高度
-  loadSubtitles();// 載入字幕
-  setInterval(rotateSubtitle, 10000);// 每10秒轮换一次副标题
+  setInterval(nextText, 20000); // 每10秒切换一次文本
 });
 
 // 組件卸載時務必釋放記憶體
@@ -136,12 +137,11 @@ watch(() => route.fullPath, () => {
         <h1 fadeUp="true">Welcome to Website of HosinoNeko</h1>
 
         <h2
-        :key="subtitleIndex"
-        class="click-box" 
+        class="click-box text" 
         @click="handleDivClick"
         :class="{ 'playing': playerState === '播放中' }"
         fadeUp="true"
-        >{{ currentSubtitle }}</h2>
+        >點解我眼角長期都帶住淚？因為我一直被困喺一個暗無天日嘅十月入面</h2>
     </div>
 </template>
 <style scoped>

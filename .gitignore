@@ -39,3 +39,8 @@ __screenshots__/
 *.timestamp-*-*.mjs
 
 /todo
+
+
+
+
+/src/routes/Developing.vue
