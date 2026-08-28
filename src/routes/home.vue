@@ -1,5 +1,17 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue'
+import { useTextAnime } from '@/utils/textAnime'
+
+const {
+    setup,
+    animateChars,
+    animateWords,
+    animateLines,
+    destroy
+} = useTextAnime('.title_2')
+onMounted(() => {
+    setup()
+})
 
 onMounted(() => {
     document.title = 'HosinoNeko Blog'
@@ -7,6 +19,9 @@ onMounted(() => {
 </script>
 <template>
     <div fadeUp="true">
+        <div>
+            <h1 class="title_2">Ciallo! I'm HosinoNeko!</h1>
+        </div>
         <div class="div">
             <h2>自介</h2>
             <p>真的好高興你可以看到這個網站，我是HosinoNeko，一名中國内地的跨性別者。</p>
