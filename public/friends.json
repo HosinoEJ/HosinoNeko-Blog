@@ -41,6 +41,13 @@
       "name": "池魚小栈",
       "desc": "跨过晨昏线，便是永夜。",
       "url": "https://chiyu.it/"
+    },
+    {
+      "name": "KiraEqual",
+      "url": "kiramyao.com/",
+      "avatar": "kiramyao.com/pic/logo/Logo.png",
+      "desc": "中国跨性别群体处境与故事收录",
+      "color": "#3388bb"
     }
   ]
 }
