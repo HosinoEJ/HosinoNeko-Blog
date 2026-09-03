@@ -14,7 +14,6 @@ import license from './routes/license.vue'
 import blogs from './routes/blogs.vue'
 import blog from './routes/blog.vue'
 import nct from './routes/nct.vue'
-import dev from './routes/Developing.vue'
 
 const app = createApp(App)
 
@@ -76,7 +75,6 @@ const routes = [
     { path: '/blog', component: blogs },
     { path: '/blog/:title', component: blog },
     { path: '/nct', component: nct },
-    { path: '/dev', component: dev },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
