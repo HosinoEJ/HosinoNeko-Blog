@@ -42,3 +42,67 @@ public/
 ## By?
 
 Not By AI!
+
+
+## ANIME?!
+
+
+### DEMO
+
+```vue
+<template>
+    <div class="container">
+        <div class="button-wrapper">
+            <button id="chars" class="button">Characters</button>
+            <button id="words" class="button">Words</button>
+            <button id="lines" class="button">Lines</button>
+        </div>
+
+        <div class="textAnime">
+            Break apart HTML text into characters, words, and/or lines for easy animation.
+        </div>
+    </div>
+</template>
+
+<script setup>
+import { onMounted, onUnmounted } from 'vue'
+import { useTextAnime } from '@/utils/textAnime'
+
+const {
+    setup,
+    animateChars,
+    animateWords,
+    animateLines,
+    destroy
+} = useTextAnime('.textAnime')
+
+
+onMounted(() => {
+    setup()
+    document
+        .querySelector('#chars')
+        ?.addEventListener('click', animateChars)
+    document
+        .querySelector('#words')
+        ?.addEventListener('click', animateWords)
+    document
+        .querySelector('#lines')
+        ?.addEventListener('click', animateLines)
+    window.addEventListener('resize', setup)
+})
+
+onUnmounted(() => {
+    document
+        .querySelector('#chars')
+        ?.removeEventListener('click', animateChars)
+    document
+        .querySelector('#words')
+        ?.removeEventListener('click', animateWords)
+    document
+        .querySelector('#lines')
+        ?.removeEventListener('click', animateLines)
+    window.removeEventListener('resize', setup)
+    destroy()
+})
+</script>
+```

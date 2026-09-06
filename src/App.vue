@@ -5,7 +5,6 @@ import Headers from './components/Headers.vue'
 import Foot from './components/Footer.vue'
 import statusForRt from './components/statusForRt.vue'
 import Banne from './components/Banne.vue';
-import age18 from './components/18age.vue';
 import setting from './components/setting.vue';
 
 import { ref, computed, onMounted } from 'vue';
@@ -17,33 +16,21 @@ const mainStyle = computed(() => ({
 }));
 
 
-const isAdultDay = ref(false);
 
-const checkDate = () => {
-    const targetDate = new Date("2026-08-08T00:00:00+08:00").getTime();
-    const now = new Date().getTime();
-    
-    isAdultDay.value = now >= targetDate;
-};
 onMounted(() => {
-    checkDate();
-    console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
+    //console.log('mobile',isMobile.value,'table',isTablet.value,'desktop',isDesktop.value)
 });
 </script>
 
 <template>
-    <button v-if="isAdultDay" button="1" style="z-index: 1000;" @click="isAdultDay = false">点击恢复原来的页面</button>
-    <div v-if="!isAdultDay">
-        <setting />
-        <Headers />
-        <Banne />
-        <main class="content" :style="mainStyle" fadeUp="true">
-            <div class="left"><router-view /></div>
-            <statusForRt />
-        </main>
-        <Foot />
-    </div>
-    <div v-else><age18 /></div>
+    <setting />
+    <Headers />
+    <Banne />
+    <main class="content" :style="mainStyle">
+        <div class="left"><router-view /></div>
+        <statusForRt />
+    </main>
+    <Foot />
 </template>
 
 <style scoped>

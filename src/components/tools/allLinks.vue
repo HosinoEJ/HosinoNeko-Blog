@@ -7,6 +7,7 @@
         <p><a href="/about">關於本站</a></p>
         <h3><a href="https://victimsunion.org">N·C·T</a></h3>
         <h3><a href="/nct">NCT Maps</a></h3>
-        <h3><a href="https://github.com/HosinoEJ">GitHub</a></h3>
+        <h3><a href="https://redirecturl.hosinoeiji.workers.dev/torsion">CONVERSION THERAPY EVIDENCE</a></h3>
+        <h3><a href="https://redirecturl.hosinoeiji.workers.dev/Github">GitHub</a></h3>
     </div>
 </template>

@@ -1,11 +1,15 @@
 <script setup>
 import { useDeviceType } from '../utils/isMobie';
 const { isMobile, isTablet } = useDeviceType();
-import { ref, onUnmounted, watch, onMounted } from 'vue';
+import { ref, onUnmounted, watch, onMounted, computed } from 'vue';
 import MidiPlayer from 'midi-player-js';
 import Soundfont from 'soundfont-player';
 import { useRoute } from 'vue-router';
 
+import { gsap } from 'gsap'
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
+
+gsap.registerPlugin(ScrambleTextPlugin)
 
 const clickCount = ref(0);
 const playerState = ref('未播放');
@@ -87,8 +91,31 @@ const checkBannerHeight = () => {
   }
 };
 
+
+import subtitle from '@/data/subtitle.json';
+let blurbs = subtitle,
+  curIndex = 0;
+
+
+const nextText = () => {
+  curIndex = (curIndex + 1) % blurbs.length;
+  gsap.to(".h2", {
+    scrambleText: {
+      text: blurbs[curIndex],
+      chars: "upperAndLowerCase",
+      revealDelay: 0.2,
+      tweenLength: true,
+      newClass: curIndex == 2 ? "border" : ""
+    },
+    ease: "power2.inOut",
+    overwrite: "auto",
+    duration: 4.2
+  });
+};
+
 onMounted(() => {
-  checkBannerHeight();
+  checkBannerHeight();// 首次檢查 banner 高度
+  setInterval(nextText, 20000); // 每10秒切换一次文本
 });
 
 // 組件卸載時務必釋放記憶體
@@ -106,18 +133,19 @@ watch(() => route.fullPath, () => {
 
 </script>
 <template>
-    <banner id="banner" fadeUp="true">
-        <h1>Welcome to Website of HosinoNeko</h1>
+    <div id="banner">
+        <h1 fadeUp="true">Welcome to Website of HosinoNeko</h1>
 
         <h2
-        class="click-box" 
+        class="click-box h2" 
         @click="handleDivClick"
         :class="{ 'playing': playerState === '播放中' }"
+        fadeUp="true"
         >點解我眼角長期都帶住淚？因為我一直被困喺一個暗無天日嘅十月入面</h2>
-    </banner>
+    </div>
 </template>
 <style scoped>
-banner{
+#banner{
     height: calc(100vh - 66px);
     margin:  0 10%;
     display: flex;
@@ -125,6 +153,11 @@ banner{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+#banner [fadeUp="true"] {
+    animation-duration: 0.5s;
+    animation-delay: 0s;
 }
 
 .c-g { color: #5bcffa; }
