@@ -17,7 +17,7 @@ import nct from './routes/nct.vue'
 
 const app = createApp(App)
 
-
+/*
 // 设定滚动动画的配置
 const lenis = new Lenis({
     // 自动使用 requestAnimationFrame 驱动（默认：true）
@@ -57,10 +57,12 @@ const lenis = new Lenis({
 });
 
 //听取滚动事件
-lenis.on('scroll', (e) => {
+//lenis.on('scroll', (e) => {
     // console.log(e) // 监听滚动事件
     //console.log(e.scroll) // 监听滚动位置
-});
+//});
+
+*/
 
 
 // 聲明全局變量，建議使用 $ 前綴以區分普通屬性
