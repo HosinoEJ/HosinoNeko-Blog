@@ -222,5 +222,12 @@ h1{
     transition: all 0.3s ease;
 }
 
-
+:deep(.markdown-body h1),
+:deep(.markdown-body h2),
+:deep(.markdown-body h3),
+:deep(.markdown-body h4),
+:deep(.markdown-body h5),
+:deep(.markdown-body h6) {
+    scroll-margin-top: 100px; /* 根据你的导航栏或粘性侧边栏高度调整 */
+}
 </style>
