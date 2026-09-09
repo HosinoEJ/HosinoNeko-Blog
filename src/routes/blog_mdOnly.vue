@@ -17,7 +17,6 @@
 </template>
 
 <script setup>
-import Giscus from '@giscus/vue';
 import { ref, onMounted, watch , computed } from 'vue'
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
@@ -140,7 +139,7 @@ h1{
 }
 .blog-layout {
 
-    background-color: white;
+    background-color: var(--bg-main);
   
   display: flex;
   flex-direction: row;
@@ -151,6 +150,12 @@ h1{
   margin: 0 auto;
   padding: 20px;
 }
+/*
+@media (prefers-color-scheme: dark) {
+    blog-layout {
+        background-color: var(--bg-main);
+    }
+}*/
 
 :deep(.toc-done-right) ul {
   list-style-type: none;
