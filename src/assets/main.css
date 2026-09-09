@@ -53,3 +53,9 @@ hr{
     overflow: visible;
     transform: display 0.3s ease-out;
 }
+
+iframe{
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
