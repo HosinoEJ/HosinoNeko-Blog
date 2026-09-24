@@ -1,6 +1,7 @@
 <template>
     <div class="statusRtDiv" :style="RtDivStyle" fadeUp="true">
         <survivalTime />
+        <HRTdays />
         <allLinks />
         <spotify />
     </div>
@@ -9,6 +10,7 @@
 import survivalTime from './tools/survivalTime.vue';
 import allLinks from './tools/allLinks.vue'
 import spotify from './tools/spotify.vue'
+import HRTdays from './tools/HRTdays.vue';
 import { computed } from 'vue';
 import { useDeviceType } from '../utils/isMobie';
 
