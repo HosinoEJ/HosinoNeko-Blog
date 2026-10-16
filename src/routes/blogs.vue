@@ -1,11 +1,11 @@
 <template>
-  <div class="blog-container" fadeUp="true">
-    <div style="margin: 50px 0 20px 0;">
+  <div  class="blog-container" fadeUp="true">
+    <div v-if="!isMobile" style="margin: 50px 0 20px 0;">
         <span class="" style="font-size: 2em; font-weight: bold;">
             推荐阅读
         </span>
     </div>
-    <div class="recommend-box">
+    <div v-if="!isMobile" class="recommend-box">
         <router-link v-for="post in recommendList" :key="post.title" :to="`/blog/${post.title}`">
             <div class="parent div">
                 <div class="post-card recommend-card">
@@ -19,7 +19,7 @@
             </div>
         </router-link>
     </div>
-    <hr>
+    <hr v-if="!isMobile">
     <div style="margin: 50px 0 50px 0;">
         <span class="" style="font-size: 2em; font-weight: bold;">
             全部文章
@@ -68,6 +68,9 @@ import { ref, computed, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { fetchBlogData, getFilteredPosts } from '../utils/blogData.js';
 import recommendList from '@/data/recommend.json';
+import { useDeviceType } from '@/utils/isMobie.js'
+
+const { isMobile, isTablet,isDesktop } = useDeviceType();
 
 const route = useRoute();
 const router = useRouter();
@@ -122,13 +125,10 @@ const allTags = computed(() => blogData.value.TagList);
     z-index: -99;         /* 确保在底层 */
     transition: all 0.3s ease; /* 平滑过渡效果 */
     opacity: 0; /* 初始透明度 */
-
-        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 .recommand-cardImg:hover {
     transform: scale(1.4);
-    opacity: 1; /* 鼠标悬停时显示图片 */
+    opacity: 0.6; /* 鼠标悬停时显示图片 */
 }
 
 .post-list {

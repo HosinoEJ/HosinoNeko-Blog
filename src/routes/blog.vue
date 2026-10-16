@@ -16,7 +16,7 @@
         </transition>
 
         <main fadeUp="true" class="div">
-            <h1>{{ route.params.title }}</h1>
+            <h1>{{ post ? post.title : route.params.title }}</h1>
             <div class="blog-meta" v-if="post">
                 <span class="meta-item">作者：{{ post.author }}，</span>
                 <span class="meta-item">發布時間：{{ post.CreationDate }}，</span>

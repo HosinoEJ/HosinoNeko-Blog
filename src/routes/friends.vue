@@ -4,7 +4,7 @@
       <div class="container">
         <div class="header">
           <h1>友情鏈接</h1>
-          <p>歡迎所有星野醬的好朋友喵（後宮）</p>
+          <p>不知道有什么用，可能是免得让人忘记有这些TEANSGENDER的存在吧</p>
         </div>
 
         <div class="links-grid div">
@@ -53,8 +53,8 @@
           <div class="div">
             <p><strong>如果想將本站加到您的網站友鏈的話，請將下面資訊加入您的友鏈頁面：</strong></p>
             <ul>
-                <li><strong>名稱：</strong> Website of HosinoNeko</li>
-                <li><strong>網址：</strong> 正式網址<a href="hosinoneko.me">hosinoneko.me</a></li>
+                <li><strong>名稱：</strong> WEBSITE of EVERY TRANSGENDER.</li>
+                <li><strong>網址：</strong> 正式網址<a href="mtf.lgbt">mtf.lgbt</a></li>
                 <li><strong>描述：</strong> 一隻可愛的小藥娘的網站</li>
                 <li><strong>頭像：</strong> <a src="https://avatars.githubusercontent.com/u/177436503?v=4">https://avatars.githubusercontent.com/u/177436503?v=4</a><br>
                 <img src="https://avatars.githubusercontent.com/u/177436503?v=4" width="50px" style="border-radius: 50%;"/></li>

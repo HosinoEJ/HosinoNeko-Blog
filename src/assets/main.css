@@ -1,7 +1,7 @@
 
 
 :root {
-    --bg-main: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --bg-main: linear-gradient(135deg, #f5f7fa 0%, #dae2ee 100%);
     --color-title: #2c3e50;
     --color-text: #34495e;
     --color-link: #3498db;
@@ -43,15 +43,18 @@ hr{
     margin: 2em 0;
 }
 
-.div {
-    background: var(--card-bg);
+.div,
+.divNobg {
     padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
     backdrop-filter: blur(10px);
     margin: 20px;
     overflow: visible;
     transform: display 0.3s ease-out;
+}
+.div{
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
 }
 
 iframe{
