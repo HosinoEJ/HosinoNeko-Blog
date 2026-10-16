@@ -134,7 +134,7 @@ watch(() => route.fullPath, () => {
 </script>
 <template>
     <div id="banner">
-        <h1 fadeUp="true">WEBSITE of EVERY TRANSGENDER.</h1>
+        <h1 fadeUp="true">WEBSITE of EVERY TRANSGENDERS.</h1>
 
         <h2
         class="click-box h2" 

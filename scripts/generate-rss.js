@@ -4,9 +4,9 @@ import { Feed } from 'feed';
 import { marked } from 'marked';
 
 // 1. 基礎配置（請替換為你的真實域名）
-const BLOG_URL = 'https://hosinoneko.me'; 
-const BLOG_TITLE = 'HOSINONEKO BLOG';
-const BLOG_DESC = 'HosinoNeko Blog';
+const BLOG_URL = 'https://mtf.lgbt'; // 你的博客域名
+const BLOG_TITLE = 'MTF.LGBT ‘s BLOG and ARTICLE';
+const BLOG_DESC = 'ABOUT every TRANSGENDERS GIFTS';
 
 const feed = new Feed({
   title: BLOG_TITLE,
@@ -15,7 +15,7 @@ const feed = new Feed({
   link: BLOG_URL,
   language: 'zh-TW', // 正體中文
   favicon: `https://avatars.githubusercontent.com/u/177436503?v=4&size=64`,
-  copyright: `All rights reserved ${new Date().getFullYear()}, HosinoNeko`,
+  copyright: `All rights reserved ${new Date().getFullYear()}, MTF.LGBT`,
 });
 
 // 2. 讀取並解析你的 blogData.json

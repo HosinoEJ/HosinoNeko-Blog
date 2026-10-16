@@ -50,8 +50,8 @@ onUnmounted(() => {
     <div class="header">
         <a href="/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
-            <span v-if="!isMobile">HosinoNeko | website</span>
-            <span v-else>HosinoNeko</span>
+            <span v-if="!isMobile"><b>MTF.LGBT | for EVERY TRANSGENDERS</b></span>
+            <span v-else><b>MTF.LGBT</b></span>
         </a>
         <page v-if="!isMobile" fadeUp="true">
             <transition name="fade" mode="out-in">
@@ -61,7 +61,7 @@ onUnmounted(() => {
             <a href="/friends">友情鏈接</a>
             <a href="/about">關於本站</a>
             <a href="/blog">文章</a>
-            <a @click="openSettingMenu">個人化</a>
+            <!--<a @click="openSettingMenu">個人化</a>-->
         </page>
         <div class="rtmod" v-else fadeUp="true">
             <button @click="openList" id="openListBtn" button="2">...</button>
