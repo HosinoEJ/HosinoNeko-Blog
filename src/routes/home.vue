@@ -24,6 +24,7 @@ onMounted(() => {
             <p>对跨性别者这么重要的一个域名，竟然只需要<b style="font-size: 1.2em;">62.2美元</b>！台下观众一片欢呼，<b>62.2$！62.2$！</b></p>
             <p>但是！<br>这么点破钱，站长竟然彻夜未眠！</p>
             <p>所以各位，如果不想让这个域名落到跨圈神人那里，就求求阁下们给我点钱吧（大哭）</p>
+            <a href="/Spons" button="2" class="Spons thisButton">赞助我！</a>
         </div>
 
         <div class="div">
@@ -34,7 +35,14 @@ onMounted(() => {
             <a href="https://forms.cloud.microsoft/r/uDGJST7hLt" button="1">訂閲</a> <a href="/rss.xml">RSS訂閲</a>
         </div>
 
-
+        <div class="div">
+            <h2>投稿</h2>
+            <p>你可以在这里投稿你写的文章，也可以在网站副标题中写一句关于你的话。
+                至于你要投稿文章还是别的东西，只需要在相应的问题中填写就可以了。所
+                有内容都会经过站长审核后才能公布</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeY2gRg201I-07NlbR-Nu6BNKL_zvaR71lJsMqUmcR8ZXOHSA/viewform?usp=header" 
+            button="2" class="thisButton">投稿</a>
+        </div>
 
         <div class="div">
             <h2>PROJECTS</h2>
@@ -48,5 +56,19 @@ onMounted(() => {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 2rem;
+}
+.thisButton {
+    color:white;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.thisButton:hover {
+    color:white;
+    padding:3px 40px;
+    transform: scale(2);
+}
+
+.Spons{
+    font-size: 1.5em;
 }
 </style>

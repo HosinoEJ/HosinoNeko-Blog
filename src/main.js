@@ -16,6 +16,7 @@ import blog from './routes/blog.vue'
 import blogMdOnly from './routes/blog_mdOnly.vue'
 import nct from './routes/nct.vue'
 import about from './routes/about.vue'
+import Spons from '@/routes/Spons.vue'
 
 const app = createApp(App)
 
@@ -81,6 +82,7 @@ const routes = [
     { path: '/blogMdOnly/:title', component: blogMdOnly },
     { path: '/nct', component: nct },
     { path: '/about', component: about },
+    { path: '/Spons', component: Spons},
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
