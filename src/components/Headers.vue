@@ -50,7 +50,7 @@ onUnmounted(() => {
     <div class="header">
         <a href="/" class="icon" fadeUp="true">
             <img :src="$HeadImageX64px"/>
-            <span v-if="!isMobile"><b>MTF.LGBT | for EVERY TRANSGENDERS</b></span>
+            <span v-if="!isMobile"><b>MTF.LGBT | for EVERY TRANSGENDER PEOPLE</b></span>
             <span v-else><b>MTF.LGBT</b></span>
         </a>
         <page v-if="!isMobile" fadeUp="true">
