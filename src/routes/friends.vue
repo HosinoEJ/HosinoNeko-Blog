@@ -40,7 +40,7 @@
             <p><strong>如果你也想交換鏈接。請在你的網站添加本站後，通過<a href="mailto:hosinoeiji@gmail.com">郵件</a>告訴我：</strong></p>
             <ul>
                 <li><strong>名稱：</strong> 我的網站名稱</li>
-                <li><strong>網址：</strong> https://yourdomain.com</li>
+                <li><strong>網址：</strong> https://yourdomain.com 或者代表你自己的社交网站主页。</li>
                 <li><strong>描述：</strong> 一句話介紹你的網站</li>
                 <li><strong>頭像：</strong> 公網可訪問的圖片鏈接</li>
                 <li>
@@ -54,8 +54,9 @@
             <p><strong>如果想將本站加到您的網站友鏈的話，請將下面資訊加入您的友鏈頁面：</strong></p>
             <ul>
                 <li><strong>名稱：</strong> WEBSITE of EVERY TRANSGENDER PEOPLE.</li>
+                <li><strong>短名称：</strong> <b>MTF.LGBT</b>  (如果您的网站无法显示上面那么又臭又长的名字，请使用这个)</li>
                 <li><strong>網址：</strong> 正式網址<a href="mtf.lgbt">mtf.lgbt</a></li>
-                <li><strong>描述：</strong> A gift for all Transgender community</li>
+                <li><strong>描述：</strong> A gift for all Transgender community.</li>
                 <li><strong>頭像：</strong> <a src="https://avatars.githubusercontent.com/u/177436503?v=4">https://avatars.githubusercontent.com/u/177436503?v=4</a><br>
                 <img src="https://avatars.githubusercontent.com/u/177436503?v=4" width="50px" style="border-radius: 50%;"/></li>
             </ul>
