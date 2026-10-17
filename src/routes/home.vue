@@ -45,9 +45,19 @@ onMounted(() => {
         </div>
 
         <div class="div">
-            <h2>PROJECTS</h2>
-            <p>NO COVNERSION THERAPY</p>
-            <a href="https://victimsunion.org">官方網站</a> | <a href="/nct">地圖</a>
+            <h2>服务</h2>
+            <div class="service-grid">
+                <div class="div" fadeUp="true">
+                    <h3>NO COVNERSION THERAPY</h3>
+                    <a href="https://victimsunion.org">官方網站</a> | <a href="/nct">地圖</a>
+                </div>
+                <div class="div" fadeUp="true">
+                    <h3>@MTF.LGBT MAIL</h3>
+                    <p>MTF.LGBT邮箱，跨性别者自己的邮箱</p>
+                    <a href="https://mail.mtf.lgbt/login">登录 | 注册</a>
+                </div>
+            </div>
+            
         </div>
     </div>
 </template>
@@ -70,5 +80,10 @@ onMounted(() => {
 
 .Spons{
     font-size: 1.5em;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 </style>

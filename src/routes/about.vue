@@ -6,7 +6,6 @@
     <div class="div" fadeUp="true">
         <h2>使用手册</h2>
         <p>站长似乎不想占用这里的空间，所以详细请看<a href="/blog/USE-MANUAL">使用手册</a></p>
-
     </div>
     <div class="div" fadeUp="true">
         <h2>TD.List</h2>
